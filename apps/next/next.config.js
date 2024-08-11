@@ -1,5 +1,29 @@
 /** @type {import('next').NextConfig} */
 const { withTamagui } = require('@tamagui/next-plugin')
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  webpack: (config, { isServer }) => {
+    // config.module.rules.push({
+    //   test: /\.(glsl|vs|fs|vert|frag)$/,
+    //   type: 'asset/source',
+    //   generator: {
+    //     filename: 'static/chunks/[path][name].[hash][ext]',
+    //   },
+    // })
+
+    config.module.rules.push({
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      exclude: /node_modules/,
+      use: ['raw-loader', 'glslify-loader'],
+    })
+    if (!isServer) {
+      config.resolve.fallback.fs = false
+    }
+    return config
+  },
+})
+
 const { join } = require('path')
 
 const boolVals = {
@@ -67,6 +91,7 @@ module.exports = function () {
       'expo-linking',
       'expo-constants',
       'expo-modules-core',
+      'next-mdx-remote',
     ],
     experimental: {
       scrollRestoration: true,
@@ -80,5 +105,5 @@ module.exports = function () {
     }
   }
 
-  return config
+  return withMDX(config)
 }

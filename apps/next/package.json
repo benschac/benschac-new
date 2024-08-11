@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/mdx": "^14.2.5",
     "@tamagui/config": "^1.108.3",
     "@tamagui/next-theme": "^1.108.3",
     "app": "0.0.0",
@@ -24,6 +25,7 @@
     "vercel": "latest"
   },
   "devDependencies": {
+    "@mdx-js/loader": "^3.0.1",
     "@tamagui/next-plugin": "^1.108.3",
     "@types/node": "^20.14.1",
     "eslint-config-next": "^14.2.3",
