@@ -1,12 +1,14 @@
 import { HomeScreen } from 'app/features/home/screen'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { GetAllPosts, getAllPosts } from 'posts'
+import generateRssFeed from 'utils/rss'
 export type PageProps = {
   source: GetAllPosts
 }
 
 export const getStaticProps = (async () => {
   const posts = await getAllPosts()
+  generateRssFeed()
   return { props: { source: posts } }
 }) satisfies GetStaticProps<PageProps>
 

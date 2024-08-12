@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@next/mdx": "^14.2.5",
+    "@next/third-parties": "^14.2.5",
     "@tamagui/config": "^1.108.3",
     "@tamagui/next-theme": "^1.108.3",
     "app": "0.0.0",
@@ -22,6 +23,7 @@
     "react-native": "0.74.2",
     "react-native-web": "~0.19.12",
     "react-native-web-lite": "^1.108.3",
+    "rss": "^1.2.2",
     "tamagui": "^1.108.3",
     "vercel": "latest"
   },
@@ -29,6 +31,7 @@
     "@mdx-js/loader": "^3.0.1",
     "@tamagui/next-plugin": "^1.108.3",
     "@types/node": "^20.14.1",
+    "@types/rss": "^0.0.32",
     "eslint-config-next": "^14.2.3",
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^10.0.1"

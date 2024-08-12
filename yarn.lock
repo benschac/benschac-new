@@ -2549,6 +2549,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/third-parties@npm:^14.2.5":
+  version: 14.2.5
+  resolution: "@next/third-parties@npm:14.2.5"
+  dependencies:
+    third-party-capital: "npm:1.0.20"
+  peerDependencies:
+    next: ^13.0.0 || ^14.0.0
+    react: ^18.2.0
+  checksum: 10/c3ff237d9d3abb1ef5f0be278e25c60725d89b26a78d0380560e67f2943700da9feb93ea63b3974219a24018829d600953da3bc7cacb1daaa19d36079b7894f5
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -5231,6 +5243,13 @@ __metadata:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 10/68e203b7f1f91d6cf21f33fc7af9d6d228035a26c83f514981e54aa3da695d0ec6af10c277c6336de1dd76c4adbe9563f3a21f80c4462000f41e5f370b46e96c
+  languageName: node
+  linkType: hard
+
+"@types/rss@npm:^0.0.32":
+  version: 0.0.32
+  resolution: "@types/rss@npm:0.0.32"
+  checksum: 10/72a5e02ac4fdc0c768412172773f7cc07d74dbb0068b1eb895217bd27a3358c65a6d42c970fba7170e37242bfdcac6205b15526e9a9e358231dca413d7ae1667
   languageName: node
   linkType: hard
 
@@ -13128,6 +13147,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mime-db@npm:~1.25.0":
+  version: 1.25.0
+  resolution: "mime-db@npm:1.25.0"
+  checksum: 10/04c91aa98beb40ae83dc6243bc01fc19a0024ccf8c2e8635e568f33c3a50f6bbc3b50a3a71a20ab789ceec8425446d9b46f09dd8fc22d6d54505c6af22fd59a3
+  languageName: node
+  linkType: hard
+
+"mime-types@npm:2.1.13":
+  version: 2.1.13
+  resolution: "mime-types@npm:2.1.13"
+  dependencies:
+    mime-db: "npm:~1.25.0"
+  checksum: 10/e76a6749e9e483eb57a90c7f081cc16b38a06c1668484a60db83841b684f3c872c2f3219117db9f312485e94ca958f24cbc1bfa5dbfe5123d213476e7ae11fbb
+  languageName: node
+  linkType: hard
+
 "mime-types@npm:^2.1.12, mime-types@npm:^2.1.27, mime-types@npm:~2.1.34":
   version: 2.1.35
   resolution: "mime-types@npm:2.1.35"
@@ -13472,10 +13507,12 @@ __metadata:
   dependencies:
     "@mdx-js/loader": "npm:^3.0.1"
     "@next/mdx": "npm:^14.2.5"
+    "@next/third-parties": "npm:^14.2.5"
     "@tamagui/config": "npm:^1.108.3"
     "@tamagui/next-plugin": "npm:^1.108.3"
     "@tamagui/next-theme": "npm:^1.108.3"
     "@types/node": "npm:^20.14.1"
+    "@types/rss": "npm:^0.0.32"
     app: "npm:0.0.0"
     eslint-config-next: "npm:^14.2.3"
     next: "npm:^14.2.3"
@@ -13488,6 +13525,7 @@ __metadata:
     react-native: "npm:0.74.2"
     react-native-web: "npm:~0.19.12"
     react-native-web-lite: "npm:^1.108.3"
+    rss: "npm:^1.2.2"
     tamagui: "npm:^1.108.3"
     vercel: "npm:latest"
   languageName: unknown
@@ -15759,6 +15797,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rss@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "rss@npm:1.2.2"
+  dependencies:
+    mime-types: "npm:2.1.13"
+    xml: "npm:1.0.1"
+  checksum: 10/0121e1c826a65961155efa5288d90ee592361edf0b3d1dc134bca37b7baa51027d324f5b404b37861954570110560decdc5b9397256c274e20ecb32007b39dbe
+  languageName: node
+  linkType: hard
+
 "run-parallel@npm:^1.1.9":
   version: 1.2.0
   resolution: "run-parallel@npm:1.2.0"
@@ -16982,6 +17030,13 @@ __metadata:
   dependencies:
     any-promise: "npm:^1.0.0"
   checksum: 10/486e1283a867440a904e36741ff1a177faa827cf94d69506f7e3ae4187b9afdf9ec368b3d8da225c192bfe2eb943f3f0080594156bf39f21b57cd1411e2e7f6d
+  languageName: node
+  linkType: hard
+
+"third-party-capital@npm:1.0.20":
+  version: 1.0.20
+  resolution: "third-party-capital@npm:1.0.20"
+  checksum: 10/40e2531b428a21f05531fc62ef82859c0071211eff09588baf75d4b525096bbdb4f93e17e2d538849db8d4fc3cceb074933d7be59fddc26f86718fbbe852a97f
   languageName: node
   linkType: hard
 
@@ -18312,6 +18367,13 @@ __metadata:
     sax: "npm:>=0.6.0"
     xmlbuilder: "npm:~11.0.0"
   checksum: 10/717f44ceef3f749ac21b381f829ba6525eec78cb9a53638046739565900e505a8e8caa62a6850b0a94cfe57ebe1a29b5367d55c4f642a3d640b9f69ca1fc7c8c
+  languageName: node
+  linkType: hard
+
+"xml@npm:1.0.1":
+  version: 1.0.1
+  resolution: "xml@npm:1.0.1"
+  checksum: 10/6c4c31a1308e45732e5ac6b50edbca0e8f7abe5cb5de10215d8e3c688819fe7c7706e056f6fb59b1a23fdf1000c2d7a8bba0a89e94aa1796cd2376d9a5ba401e
   languageName: node
   linkType: hard
 

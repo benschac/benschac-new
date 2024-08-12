@@ -4,7 +4,6 @@ import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { Suspense } from 'react'
-import { useRouter } from 'solito/navigation'
 const components = {
   Image: (props: unknown) => (
     // @ts-expect-error - Image jsx issue, will look into this later
