@@ -1,9 +1,8 @@
-import { H1, H2, H3, ListItem, Paragraph, Spacer, Image } from '@my/ui'
+import { H1, H2, H3, ListItem, Paragraph, Spacer, Image, Layout, YStack } from '@my/ui'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { Layout } from '@tamagui/lucide-icons'
 import { Suspense } from 'react'
 import { useRouter } from 'solito/navigation'
 const components = {
@@ -36,7 +35,14 @@ const components = {
 }
 
 export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
-  const router = useRouter()
-
-  return <MDXRemote components={components} {...props.source} />
+  return (
+    <Layout>
+      <Suspense fallback={<YStack>Loading...</YStack>}>
+        <YStack f={1} gap="$1" p="$4" maw="80ch" mx="auto">
+          {/* @ts-expect-error */}
+          <MDXRemote components={components} {...props.source} />
+        </YStack>
+      </Suspense>
+    </Layout>
+  )
 }

@@ -47,11 +47,11 @@ export async function getAllPosts() {
   }
 
   const posts = await Promise.all(Promises)
-  // const posts = await slugs.map(async (slug) => {
-  //   const res = await getPostBySlug(slug)
-  //   return res
-  // })
-  // sort posts by date in descending order
-  // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  posts.sort((a, b) => {
+    return (
+      new Date(b.source.frontmatter.date as string).getTime() -
+      new Date(a.source.frontmatter.date as string).getTime()
+    )
+  })
   return posts
 }
