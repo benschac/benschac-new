@@ -1,7 +1,6 @@
 import { SwitchThemeButton } from '@my/ui'
 import type { GestureReponderEvent } from '@tamagui/core'
 import { useRouter } from 'next/router'
-// import Link from 'next/link'
 import React from 'react'
 import { YStack, Text, XStack, Spacer, ThemeName, View, Theme, H3 } from 'tamagui'
 
@@ -172,9 +171,9 @@ const Header = () => {
             </Theme>
           </View>
           <Spacer flex />
-          <Link href="/about">about</Link>
-          <Link href="/blog">blog</Link>
-          <Link href="/uses">uses</Link>
+          {/* <Link href="/about">about</Link> */}
+          {/* <Link href="/blog">blog</Link> */}
+          {/* <Link href="/uses">uses</Link> */}
           <SwitchThemeButton />
         </XStack>
       </YStack>
@@ -184,6 +183,7 @@ const Header = () => {
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
+    // @ts-expect-error - minHeight is not in the theme
     <YStack br="$radius.2" bg="$backgroundFocus" mih="100vh" px="$4">
       <Theme name="green">
         <Theme name="alt1">
