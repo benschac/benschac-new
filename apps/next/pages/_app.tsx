@@ -18,8 +18,8 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
   return (
     <>
       <Head>
-        <title>Tamagui • Pages Router</title>
-        <meta name="description" content="Tamagui, Solito, Expo & Next.js" />
+        <title>bensch.ac</title>
+        <meta name="bensch.ac" content="benjamin's blog" />
         <link rel="icon" href="/favicon.ico" />
         <script
           dangerouslySetInnerHTML={{
