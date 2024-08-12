@@ -1,8 +1,7 @@
 import { HomeScreen } from 'app/features/home/screen'
-import { GetStaticProps } from 'next'
-import { getAllPosts } from 'posts'
-type GetAllPosts = Awaited<ReturnType<typeof getAllPosts>>
-type PageProps = {
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { GetAllPosts, getAllPosts } from 'posts'
+export type PageProps = {
   source: GetAllPosts
 }
 
@@ -16,7 +15,7 @@ export const getStaticProps = (async () => {
   return { props: { source: posts } }
 }) satisfies GetStaticProps<PageProps>
 
-export default function Page(props: any) {
-  console.log(props)
-  return <HomeScreen pagesMode={true} />
+export default function Page(props: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { source } = props
+  return <HomeScreen source={source} />
 }

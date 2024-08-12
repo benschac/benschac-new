@@ -3,6 +3,9 @@ import fs from 'node:fs'
 import { join } from 'node:path'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+
+export type GetAllPosts = Awaited<ReturnType<typeof getAllPosts>>
+export type GetPostBySlug = Awaited<ReturnType<typeof getPostBySlug>>
 export type Author = {
   name: string
   picture: string
