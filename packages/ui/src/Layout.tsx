@@ -68,6 +68,8 @@ const Header = () => {
         borderCurve="continuous"
         shadowColor="$shadowColor"
         shadowRadius="$3"
+        mx="$10"
+        px="$6"
         tag="header"
         jc="center"
       >
@@ -79,7 +81,8 @@ const Header = () => {
           columnGap="$4"
           ai="center"
           tag="nav"
-          p="$6"
+          px="$5"
+          py="$6"
           pos="relative"
         >
           <View

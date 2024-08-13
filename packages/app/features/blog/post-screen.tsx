@@ -89,7 +89,6 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
         <YStack
           bg="$background075"
           borderRadius="$10"
-          borderWidth="$1"
           borderColor="$accentBackground"
           borderCurve="continuous"
           shadowColor="$shadowColor"
