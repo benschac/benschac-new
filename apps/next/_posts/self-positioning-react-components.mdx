@@ -19,8 +19,8 @@ ogImage:
 ---
 
 <Image
-  alt='react.js logo'
-  src='/static/images/1__jDIj2SKAE__Bp32owLoHDjw.png'
+  alt="react.js logo"
+  src="/static/images/1__jDIj2SKAE__Bp32owLoHDjw.png"
   width={700}
   height={400}
 />
@@ -48,8 +48,8 @@ The solution needed to be a single set of metadata and a component that knew whe
 and the component moving with the viewport resize.
 
 <Image
-  alt='react.js logo'
-  src='https://img.youtube.com/vi/OwGAaxtAmaQ/0.jpg'
+  alt="react.js logo"
+  src="https://img.youtube.com/vi/OwGAaxtAmaQ/0.jpg"
   width={700}
   height={400}
 />
@@ -61,8 +61,8 @@ First things first, we need to know where the parent element is on the page befo
 ![](/Users/benjaminschachter/Downloads/medium-export-53ea0a62798a34a070e02ba6c20fabcaa79f4d6071252b2620cbac428dd8bde9/posts/md_1652096354662/img/1__EkU__yoIB4aWoSRX11jYIiw.png)
 
 <Image
-  alt='react.js logo'
-  src='/static/images/1__EkU__yoIB4aWoSRX11jYIiw.png'
+  alt="react.js logo"
+  src="/static/images/1__EkU__yoIB4aWoSRX11jYIiw.png"
   width={700}
   height={400}
 />
@@ -260,8 +260,8 @@ Here’s a diagram of our component lifecycle, getters, setters and render metho
 ![](/Users/benjaminschachter/Downloads/medium-export-53ea0a62798a34a070e02ba6c20fabcaa79f4d6071252b2620cbac428dd8bde9/posts/md_1652096354662/img/1__nMWbkf4UI35QyiTOTl1WWA.png)
 
 <Image
-  alt='react.js logo'
-  src='/static/images/1__nMWbkf4UI35QyiTOTl1WWA.png'
+  alt="react.js logo"
+  src="/static/images/1__nMWbkf4UI35QyiTOTl1WWA.png"
   width={700}
   height={400}
 />
@@ -293,9 +293,7 @@ module.exports = React.createClass({
     window.removeEventListener('resize', this.setStyles)
   },
   shouldComponentUpdate: function (nextProps, nextState) {
-    return (
-      !_.isEqual(nextProps, this.props) || !_.isEqual(nextState, this.state)
-    )
+    return !_.isEqual(nextProps, this.props) || !_.isEqual(nextState, this.state)
   },
   componentWillReceiveProps: function (nextProps) {
     if (nextProps.step !== this.props.step) {
@@ -399,37 +397,25 @@ module.exports = React.createClass({
 
     return (
       <div className={parentClass}>
-        <div
-          className={childClass}
-          style={this.getStyles()}
-        >
+        <div className={childClass} style={this.getStyles()}>
           <div>
-            <div className='step-info'>
+            <div className="step-info">
               <span>
-                <span className='step'>
-                  <i
-                    className='fa fa-question-circle'
-                    aria-hidden='true'
-                  ></i>
+                <span className="step">
+                  <i className="fa fa-question-circle" aria-hidden="true"></i>
                   &nbsp; Step {props.step + 1}
                 </span>{' '}
                 of {tutorialMeta.length}
               </span>
             </div>
-            <div className='step-text'>
+            <div className="step-text">
               <span dangerouslySetInnerHTML={{ __html: text }}></span>
             </div>
-            <div className='end-tutorial'>
-              <a
-                className='clickable'
-                onClick={props.onTutorialFinish}
-              >
+            <div className="end-tutorial">
+              <a className="clickable" onClick={props.onTutorialFinish}>
                 End tutorial
               </a>
-              <button
-                className={btnCls}
-                onClick={props.onTutorialNext}
-              >
+              <button className={btnCls} onClick={props.onTutorialNext}>
                 Next
               </button>
             </div>

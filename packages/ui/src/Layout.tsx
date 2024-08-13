@@ -184,7 +184,9 @@ const Header = () => {
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     // @ts-expect-error - minHeight is not in the theme
-    <YStack br="$radius.2" bg="$backgroundFocus" mih="100vh" px="$4">
+    <YStack br="$radius.2" bg="$backgroundFocus" mih="100vh" px="$4" $sm={{
+      px: '$0',
+    }}>
       <Theme name="green">
         <Theme name="alt1">
           <Spacer size="$4" />
