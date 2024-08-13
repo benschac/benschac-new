@@ -64,9 +64,10 @@ const Header = () => {
         pos="sticky"
         t="$4"
         bg="rgba(255, 255, 255, 0.07)"
-        borderRadius="$4"
-        borderWidth="$1"
-        borderColor="$color"
+        borderRadius="$10"
+        borderCurve="continuous"
+        shadowColor="$shadowColor"
+        shadowRadius="$3"
         tag="header"
         jc="center"
       >
@@ -184,9 +185,15 @@ const Header = () => {
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     // @ts-expect-error - minHeight is not in the theme
-    <YStack br="$radius.2" bg="$backgroundFocus" mih="100vh" px="$4" $sm={{
-      px: '$0',
-    }}>
+    <YStack
+      br="$radius.2"
+      bg="$backgroundFocus"
+      mih="100vh"
+      px="$4"
+      $sm={{
+        px: '$0',
+      }}
+    >
       <Theme name="green">
         <Theme name="alt1">
           <Spacer size="$4" />

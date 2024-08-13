@@ -88,12 +88,12 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
         <Spacer size="$4" />
         <YStack
           bg="$background075"
-          borderRadius="$4"
+          borderRadius="$10"
           borderWidth="$1"
           borderColor="$accentBackground"
           borderCurve="continuous"
           shadowColor="$shadowColor"
-          shadowRadius="$2"
+          shadowRadius="$3"
           px="$12"
           $sm={{ px: '$2' }}
           py="$10"
