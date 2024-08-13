@@ -69,19 +69,19 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
       <Suspense fallback={<YStack>Loading...</YStack>}>
         <YStack
           // @ts-expect-error
-          maw="100ch"
+          maw="81ch"
           mx="auto"
           $sm={{
             px: '$0',
           }}
-          px="$3"
+          // px="$3"
           jc="center"
           ai="center"
           // @ts-expect-error
           h="25vh"
         >
           {/* @ts-expect-error */}
-          <H1 letterSpacing="-.4px" ta="center">
+          <H1 ta="center" letterSpacing="-1px">
             {props.source.frontmatter.title}
           </H1>
         </YStack>
@@ -94,9 +94,9 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
           borderCurve="continuous"
           shadowColor="$shadowColor"
           shadowRadius="$3"
-          px="$12"
+          px="$10"
           $sm={{ px: '$2' }}
-          py="$10"
+          py="$9"
           mx="auto"
         >
           <YStack
