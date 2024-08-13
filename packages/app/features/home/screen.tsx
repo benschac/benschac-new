@@ -40,7 +40,8 @@ export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
               <YStack cursor="pointer" {...blogLink}>
                 <YStack rowGap="$2">
                   <H5 size="$6">{new Date(date as string).toLocaleDateString()}</H5>
-                  <H2 size="$10">{title}</H2>
+                  {/* @ts-expect-error */}
+                  <H1 letterSpacing="-1px">{title}</H1>
                   <XStack columnGap="$2">
                     <XStack columnGap="$2">
                       {tags?.map((tag: string, idx: number) => {
