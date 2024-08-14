@@ -68,8 +68,10 @@ const Header = () => {
         borderCurve="continuous"
         shadowColor="$shadowColor"
         shadowRadius="$3"
-        mx="$10"
-        px="$6"
+        $sm={{
+          mx: '$2',
+          px: '$0',
+        }}
         tag="header"
         jc="center"
       >
@@ -187,10 +189,10 @@ const Header = () => {
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    // @ts-expect-error - minHeight is not in the theme
     <YStack
       br="$radius.2"
       bg="$backgroundFocus"
+      // @ts-expect-error - minHeight is not in the theme
       mih="100vh"
       px="$4"
       $sm={{

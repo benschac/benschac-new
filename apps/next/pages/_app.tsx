@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
       <Head>
         <title>bensch.ac</title>
         <meta name="bensch.ac" content="benjamin's blog" />
+        {/* TODO: update with real favicon */}
         <link rel="icon" href="/favicon.ico" />
         <script
           dangerouslySetInnerHTML={{
