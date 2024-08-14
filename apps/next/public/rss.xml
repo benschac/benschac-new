@@ -9,10 +9,17 @@
             <link>http://localhost:3000</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 14 Aug 2024 11:44:27 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 14 Aug 2024 13:50:28 GMT</lastBuildDate>
         <atom:link href="http://localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 14 Aug 2024 11:44:27 GMT</pubDate>
+        <pubDate>Wed, 14 Aug 2024 13:50:28 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2024]]></copyright>
+        <item>
+            <title><![CDATA[Fixing React Native Universal FS Node Module Not Supported Error]]></title>
+            <description><![CDATA[A quick debugging session on how fixing the error "The package at "../../node_modules/next/dist/compiled/gzip-size/index.js" attempted to import the Node standard library module "fs".]]></description>
+            <link>http://localhost:3000/blog/fixing-react-native-universal-fs-node-module</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/fixing-react-native-universal-fs-node-module</guid>
+            <pubDate>Wed, 14 Aug 2024 05:35:07 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Half Batch Summer 2 Recurse Center Return Statement]]></title>
             <description><![CDATA[A reflection on my time and experience during a 6-week half batch]]></description>

@@ -1,0 +1,64 @@
+---
+title: Fixing React Native Universal FS Node Module Not Supported Error
+description: >-
+  A quick debugging session on how fixing the error "The package at "../../node_modules/next/dist/compiled/gzip-size/index.js" attempted to import the Node standard library module "fs".
+date: '2024-08-14T05:35:07.322Z'
+slug: 'fixing-react-native-universal-fs-node-module'
+publication: 'freeCodeCamp'
+tags:
+  - react-native
+  - typescript
+  - node
+  - debugging
+author:
+  name: benjamin
+  picture: ''
+ogImage:
+  url: ''
+---
+
+# Intro
+
+Documenting for both my future self and anyone else on the world wide web who may run into the same issue.
+
+I bootstrapped my project with [`yarn create tamagui`](https://tamagui.dev/) using the free web + mobile template.
+
+While building my personal site and react-native play ground I ran into this issue when trying to build my `expo` project
+
+```bash
+The package at "../../node_modules/next/dist/compiled/gzip-size/index.js" attempted to import the Node standard library module "fs".
+```
+
+The steps I took to debug the issue:
+
+❌ Removed mdx deps
+
+❌ copied tamagui example
+
+❌ hard reset yarn and make deps use v3
+
+❌ commented out places where fs is used
+
+❌ commented out rss
+
+❌ commented out all screens
+
+❌ removed all next references from the project
+
+❌ commend out fs fallback nextjs config
+
+## The Solution
+
+Running the `yarn why` command in the `expo` directory
+
+```bash
+y why next
+└─ next-app@workspace:apps/next
+   └─ next@npm:14.2.5 [1e21e] (via npm:^14.2.3 [1e21e])
+```
+
+Next was still being imported into the project, directly.
+
+I was still importing `@my/ui`. After looking through the components directory, `Layout` was importing `next/router`.
+
+After replacing `next/router with `solito/router` the project built successfully.
