@@ -41,6 +41,7 @@ export const Navigation = () => {
         borderRadius="$10"
         borderCurve="continuous"
         shadowColor="$shadowColor"
+        mx="$3"
         shadowRadius="$3"
         $sm={{
           mx: '$2',

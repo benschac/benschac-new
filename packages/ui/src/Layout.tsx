@@ -43,18 +43,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         px: '$0',
       }}
     >
-      <Theme name="green">
-        <Theme name="alt1">
-          <Spacer size="$4" />
-          <YStack f={1}>
-            <Navigation />
-            <Spacer size="$4" />
-            <YStack f={1} tag="main">
-              {children}
-            </YStack>
-          </YStack>
-        </Theme>
-      </Theme>
+      <Spacer size="$4" />
+      <YStack f={1}>
+        <Navigation />
+        <Spacer size="$4" />
+        <YStack f={1} tag="main">
+          {children}
+        </YStack>
+      </YStack>
     </YStack>
   )
 }

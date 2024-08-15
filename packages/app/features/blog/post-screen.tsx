@@ -11,6 +11,7 @@ import {
   YStack,
   XStack,
   styled,
+  ColorfulSVGPattern,
 } from '@my/ui'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
@@ -86,10 +87,12 @@ const components = {
 export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
   return (
     <Suspense fallback={<YStack>Loading...</YStack>}>
+      {/* <ColorfulSVGPattern /> */}
       <YStack
         // @ts-expect-error
         maw="81ch"
         mx="auto"
+        mih="30vh"
         $sm={{
           px: '$0',
         }}
@@ -97,7 +100,7 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
         jc="center"
         ai="center"
         // @ts-expect-error
-        mih="25vh"
+        // mih="25vh"
       >
         <H1
           ta="center"
@@ -110,31 +113,32 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
           {props.source.frontmatter.title}
         </H1>
       </YStack>
-      <Spacer size="$4" />
-      <YStack
-        bg="$background075"
-        borderRadius="$10"
-        borderColor="$accentBackground"
-        borderCurve="continuous"
-        shadowColor="$shadowColor"
-        shadowRadius="$3"
-        px="$10"
-        $sm={{ px: '$2' }}
-        py="$9"
-        mx="auto"
-      >
+      {/* <Spacer size="$4" /> */}
+      <YStack f={1}>
         <YStack
-          $sm={{
-            px: '$0',
-            overflow: 'hidden',
-          }}
-          f={1}
-          rowGap="$6"
-          // @ts-expect-error
-          maw="80ch"
+          bg="$background075"
+          borderRadius="$10"
+          borderColor="$accentBackground"
+          borderCurve="continuous"
+          shadowColor="$shadowColor"
+          shadowRadius="$3"
+          $sm={{ px: '$2' }}
+          py="$8"
+          mx="auto"
         >
-          {/* @ts-expect-error */}
-          <MDXRemote components={components} {...props.source} />
+          <YStack
+            $sm={{
+              px: '$2',
+            }}
+            f={1}
+            px="$4"
+            rowGap="$6"
+            // @ts-expect-error
+            maw="80ch"
+          >
+            {/* @ts-expect-error */}
+            <MDXRemote components={components} {...props.source} />
+          </YStack>
         </YStack>
       </YStack>
       <Spacer size="$10" />

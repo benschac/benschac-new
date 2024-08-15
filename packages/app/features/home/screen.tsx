@@ -46,7 +46,7 @@ export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
                     <XStack columnGap="$2">
                       {tags?.map((tag: string, idx: number) => {
                         return (
-                          <Theme key={`${blogLink.href}-${tag}`} inverse>
+                          <Theme key={`${blogLink.href}-${tag}`}>
                             <Paragraph
                               bg="$color"
                               br="$2"
