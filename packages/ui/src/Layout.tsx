@@ -59,6 +59,9 @@ const Header = () => {
       <Spacer size="$4" />
       <YStack
         zi={1}
+        style={{
+          WebkitBackdropFilter: 'blur(3.8px)',
+        }}
         backdropFilter="blur(3.8px)"
         // @ts-expect-error TODO: add sticky to tamagui core
         pos="sticky"
