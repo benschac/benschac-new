@@ -3617,7 +3617,7 @@ __metadata:
     "@tamagui/build": "npm:*"
     subset-font: "npm:^1.6.1"
   peerDependencies:
-    "@tamagui/core": "*"
+    "@tamagui/build": ^1.108.3
   languageName: unknown
   linkType: soft
 
@@ -3628,7 +3628,7 @@ __metadata:
     "@tamagui/build": "npm:*"
     subset-font: "npm:^1.6.1"
   peerDependencies:
-    "@tamagui/core": "*"
+    "@tamagui/build": ^1.108.3
   languageName: unknown
   linkType: soft
 
