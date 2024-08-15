@@ -3614,10 +3614,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tamagui-google-fonts/inter-tight@workspace:packages/font-inter-tight"
   dependencies:
-    "@tamagui/build": "npm:*"
+    "@tamagui/build": "npm:^1.108.3"
     subset-font: "npm:^1.6.1"
   peerDependencies:
-    "@tamagui/build": ^1.108.3
+    "@tamagui/core": "*"
   languageName: unknown
   linkType: soft
 
