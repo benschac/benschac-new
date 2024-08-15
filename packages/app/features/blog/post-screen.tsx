@@ -42,7 +42,7 @@ const components = {
   h2: H2,
   Spacer: Spacer,
   h3: H3,
-  p: (props) => <Paragraph size="$5" {...props} />,
+  p: (props) => <Paragraph mt="$3" {...props} />,
   AnimatedHeader,
   li: ListItem,
   blockquote: Blockquote,
@@ -57,6 +57,7 @@ const components = {
         language={match[1]}
         PreTag="div"
         customStyle={{
+          marginTop: 20,
           minWidth: 'min-content',
           textWrap: 'wrap',
           whiteSpace: 'wrap',
@@ -87,19 +88,17 @@ const components = {
 export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
   return (
     <Suspense fallback={<YStack>Loading...</YStack>}>
-      {/* <ColorfulSVGPattern /> */}
       <YStack
         // @ts-expect-error
         maw="81ch"
         mx="auto"
+        // @ts-expect-error
         mih="30vh"
         $sm={{
           px: '$0',
         }}
-        // px="$3"
         jc="center"
         ai="center"
-        // @ts-expect-error
         // mih="25vh"
       >
         <H1
@@ -124,6 +123,7 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
           shadowRadius="$3"
           $sm={{ px: '$2' }}
           py="$8"
+          px="$6"
           mx="auto"
         >
           <YStack
@@ -132,7 +132,6 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
             }}
             f={1}
             px="$4"
-            rowGap="$6"
             // @ts-expect-error
             maw="80ch"
           >

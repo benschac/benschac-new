@@ -10,6 +10,8 @@ import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
 import { Provider } from 'app/provider'
 import { AppProps } from 'next/app'
 import { NextPage } from 'next'
+import { Source_Serif_4 } from 'next/font/google'
+
 import type { SolitoAppProps } from 'solito'
 
 if (process.env.NODE_ENV === 'production') {
@@ -22,6 +24,11 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 export type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
+export const font = Source_Serif_4({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--my-font',
+})
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
   const getLayout = Component.getLayout || ((page) => page)
@@ -59,7 +66,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
       }}
     >
       <Provider disableRootThemeClass disableInjectCSS defaultTheme={theme}>
-        {children}
+        <div className={font.variable}>{children}</div>
       </Provider>
     </NextThemeProvider>
   )

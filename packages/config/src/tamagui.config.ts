@@ -3,6 +3,7 @@ import { createInterFont } from '@tamagui/font-inter'
 import { shorthands } from '@tamagui/shorthands'
 import { tokens, themes } from '@tamagui/config/v3'
 import { createMedia } from '@tamagui/react-native-media-driver'
+import { createSourceSerif_4Font } from '@tamagui-google-fonts/source-serif-4'
 
 import { animations } from '@my/ui/src/animations'
 
@@ -38,15 +39,58 @@ const headingFont = createInterFont({
   },
 })
 
-const bodyFont = createInterFont(
+// const bodyFont = createInterFont(
+//   {
+//     face: {
+//       700: { normal: 'InterBold' },
+//     },
+//   },
+//   {
+//     sizeSize: (size) => Math.round(size * 1.1),
+//     sizeLineHeight: (size) => Math.round(size * 1.1 + (size > 20 ? 10 : 10)),
+//   }
+// )
+
+const bodyFont = createSourceSerif_4Font(
   {
     face: {
-      700: { normal: 'InterBold' },
+      '200': {
+        normal: 'SourceSerif4ExtraLight',
+        italic: 'SourceSerif4_18ptExtraLight',
+      },
+      '300': {
+        normal: 'SourceSerif4Light',
+        italic: 'SourceSerif4_18ptLight',
+      },
+      '400': {
+        normal: 'SourceSerif4',
+        italic: 'SourceSerif4_18ptRegular',
+      },
+      '500': {
+        normal: 'SourceSerif4Medium',
+        italic: 'SourceSerif4_18ptMedium',
+      },
+      '600': {
+        normal: 'SourceSerif4SemiBold',
+        italic: 'SourceSerif4_18ptSemiBold',
+      },
+      '700': {
+        normal: 'SourceSerif4Bold',
+        italic: 'SourceSerif4_18ptBold',
+      },
+      '800': {
+        normal: 'SourceSerif4ExtraBold',
+        italic: 'SourceSerif4_18ptExtraBold',
+      },
+      '900': {
+        normal: 'SourceSerif4Black',
+        italic: 'SourceSerif4_18ptBlack',
+      },
     },
   },
   {
     sizeSize: (size) => Math.round(size * 1.1),
-    sizeLineHeight: (size) => Math.round(size * 1.1 + (size > 20 ? 10 : 10)),
+    sizeLineHeight: (size) => Math.round(size * 1 + (size > 20 ? 10 : 10)),
   }
 )
 

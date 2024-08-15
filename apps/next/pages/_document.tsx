@@ -34,7 +34,6 @@ export default class Document extends NextDocument {
       />,
       <style jsx global>{`
         html {
-          font-family: 'Inter';
         }
       `}</style>,
     ]

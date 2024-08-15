@@ -12,6 +12,7 @@
   "dependencies": {
     "@next/mdx": "^14.2.5",
     "@next/third-parties": "^14.2.5",
+    "@tamagui-google-fonts/source-serif-4": "workspace:^",
     "@tamagui/config": "^1.108.3",
     "@tamagui/next-theme": "^1.108.3",
     "app": "0.0.0",
