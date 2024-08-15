@@ -49,14 +49,34 @@ const components = {
     const match = /language-(\w+)/.exec(className || '')
     return !inline && match ? (
       <SyntaxHighlighter
+        wrapLines
+        wrapLongLines
         children={String(children).replace(/\n$/, '')}
         style={atomDark}
         language={match[1]}
         PreTag="div"
+        customStyle={{
+          minWidth: 'min-content',
+          textWrap: 'wrap',
+          whiteSpace: 'wrap',
+          overflow: 'hidden',
+          lineBreak: 'anywhere',
+        }}
         {...props}
       />
     ) : (
-      <span className={className} {...props}>
+      <span
+        style={
+          {
+            // TODO: single line code block styles
+            // overflowX: 'hidden',
+            // background: 'red',
+            // display: 'block',
+          }
+        }
+        className={className}
+        {...props}
+      >
         {children}
       </span>
     )
@@ -78,10 +98,16 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
           jc="center"
           ai="center"
           // @ts-expect-error
-          h="25vh"
+          mih="25vh"
         >
-          {/* @ts-expect-error */}
-          <H1 ta="center" letterSpacing="-1px">
+          <H1
+            ta="center"
+            $sm={{
+              fontSize: '$9',
+            }}
+            // @ts-expect-error
+            letterSpacing="-1px"
+          >
             {props.source.frontmatter.title}
           </H1>
         </YStack>
@@ -101,6 +127,7 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
           <YStack
             $sm={{
               px: '$0',
+              overflow: 'hidden',
             }}
             f={1}
             rowGap="$6"

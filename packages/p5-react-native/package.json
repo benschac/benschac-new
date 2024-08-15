@@ -1,0 +1,55 @@
+{
+  "name": "p5-react-native",
+  "description": "p5.js for React Native",
+  "version": "0.0.0",
+  "main": "src/index.tsx",
+  "module:jsx": "src",
+  "module": "./dist/index.mjs",
+  "types": "./src",
+  "license": "MIT",
+  "author": "benjamin",
+  "keywords": [
+    "expo",
+    "processing",
+    "p5",
+    "graphics",
+    "opengl",
+    "gl"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "tsup src/index.tsx --config tsup.config.ts --watch",
+    "build": "tsup src/index.tsx --config tsup.config.ts",
+    "start": "node --loader ts-node/esm --experimental-specifier-resolution=node examples/index.ts",
+    "clean": "turbo clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "docs": "typedoc"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.1",
+    "@types/p5": "^1.7.6",
+    "@types/react": "^18",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.1.0",
+    "typedoc": "^0.26.4",
+    "typedoc-plugin-markdown": "^4.2.1",
+    "typescript": "~5.3.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "expo-gl": "^14.0.2",
+    "p5": "^1.10.0",
+    "react": "^18.3.1"
+  }
+}

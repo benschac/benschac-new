@@ -2,7 +2,7 @@ import { SwitchThemeButton } from '@my/ui'
 import type { GestureReponderEvent } from '@tamagui/core'
 import { useRouter } from 'solito/router'
 import React from 'react'
-import { YStack, Text, XStack, Spacer, ThemeName, View, Theme, H3 } from 'tamagui'
+import { YStack, Text, XStack, Spacer, ThemeName, View, Theme, H3 } from '.'
 
 export const Link = ({
   href,

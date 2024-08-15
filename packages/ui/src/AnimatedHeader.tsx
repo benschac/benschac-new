@@ -17,159 +17,112 @@ export function AnimatedHeader({ children }: { children: React.ReactNode }) {
     return [...theme, ...themes]
   }, [])
   return (
-    <YStack
-      h="20vh"
-      mx="auto"
-      p="$4"
-      w="90%"
-      overflow="hidden"
-      pos="relative"
-      key="header"
-      animation="slow"
-      enterStyle={{ x: -5, o: 0 }}
-      exitStyle={{ x: -5, o: 0 }}
-      columnGap="$4"
-      ai="center"
-      tag="nav"
-      textWrap="wrap"
-      onMouseEnter={() => setHeaderHover(true)}
-      onMouseLeave={() => setHeaderHover(false)}
-    >
-      <Theme
-        y={headerHover ? -4 : 0}
-        x={headerHover ? 4 : 0}
-        pos="absolute"
-        color="$color"
-        fontFamily="$body"
-        // size="$9"
-        style={{
-          transform: `translateY(-50%) translateX(-50%)`,
-        }}
-        width="90%"
-        textAlign="center"
-        top="50%"
-        left="50%"
-        m={0}
-        wordWrap="break-word"
-        display="flex"
-        name={orderOfThemes[4]}
-      >
-        <H1>{children}</H1>
-      </Theme>
-      <Theme
-        y={headerHover ? -4 : 0}
-        x={headerHover ? 4 : 0}
-        color="$color"
-        fontFamily="$body"
-        // size="$9"
-        animation="slow"
-        style={{
-          transform: `translateY(-50%) translateX(-50%)`,
-        }}
-        width="90%"
-        textAlign="center"
-        top="50%"
-        left="50%"
-        m={0}
-        wordWrap="break-word"
-        display="flex"
-        name={orderOfThemes[3]}
-      >
-        <H1>{children}</H1>
-      </Theme>
-      <Theme
-        y={0}
-        x={0}
-        color="$color"
-        letterSpacing={-0.4}
-        animation="slow"
-        fontFamily="$body"
-        // size="$9"
-        pos="absolute"
-        style={{
-          transform: `translateY(-50%) translateX(-50%)`,
-        }}
-        width="90%"
-        textAlign="center"
-        top="50%"
-        left="50%"
-        m={0}
-        wordWrap="break-word"
-        display="flex"
-        name={orderOfThemes[2]}
-      >
-        <H1>{children}</H1>
-      </Theme>
-      <Theme name={orderOfThemes[1]}>
-        <H1
-          y={headerHover ? -2 : 0}
-          x={headerHover ? 2 : 0}
-          color="$color"
-          letterSpacing={-0.4}
-          fontFamily="$body"
-          // size="$9"
+    <>
+      <YStack>
+        <View
+          key="header"
           animation="slow"
-          pos="absolute"
-          style={{
-            transform: `translateY(-50%) translateX(-50%)`,
-          }}
-          width="90%"
-          textAlign="center"
-          top="50%"
-          left="50%"
-          m={0}
-          wordWrap="break-word"
-          display="flex"
+          enterStyle={{ x: -5, o: 0 }}
+          exitStyle={{ x: -5, o: 0 }}
+          columnGap="$4"
+          ai="center"
+          tag="nav"
+          height="20vh"
+          pos="relative"
+          textWrap="wrap"
+          onMouseEnter={() => setHeaderHover(true)}
+          onMouseLeave={() => setHeaderHover(false)}
         >
-          {children}
-        </H1>
-      </Theme>
-      <Theme name={orderOfThemes[0]}>
-        <H1
-          y={headerHover ? -4 : 0}
-          x={headerHover ? 4 : 0}
-          fontFamily="$body"
-          // size="$9"
-          animation="slow"
-          pos="absolute"
-          color="$color"
-          style={{
-            transform: `translateY(-50%) translateX(-50%)`,
-          }}
-          width="90%"
-          textAlign="center"
-          top="50%"
-          left="50%"
-          m={0}
-          wordWrap="break-word"
-          display="flex"
-        >
-          {children}
-        </H1>
-      </Theme>
-      <Theme>
-        <H1
-          y={headerHover ? -6 : 0}
-          x={headerHover ? 6 : 0}
-          animation="slow"
-          fontFamily="$body"
-          // size="$9"
-          pos="absolute"
-          color="$color"
-          style={{
-            transform: `translateY(-50%) translateX(-50%)`,
-          }}
-          width="90%"
-          textAlign="center"
-          top="50%"
-          left="50%"
-          m={0}
-          wordWrap="break-word"
-          display="flex"
-        >
-          {children}
-        </H1>
-      </Theme>
-    </YStack>
+          <Theme name={orderOfThemes[4]}>
+            <H1
+              y={headerHover ? -4 : 0}
+              x={headerHover ? 4 : 0}
+              pos="absolute"
+              color="$color"
+              fontFamily="$body"
+              // size="$9"
+              style={{
+                transform: `translateY(-50%) translateX(-50%)`,
+              }}
+              width="90%"
+              textAlign="center"
+              top="50%"
+              left="50%"
+              m={0}
+              wordWrap="break-word"
+              display="flex"
+            >
+              {children}
+            </H1>
+          </Theme>
+          <Theme name={orderOfThemes[3]}>
+            <H1
+              y={headerHover ? -4 : 0}
+              x={headerHover ? 4 : 0}
+              color="$color"
+              fontFamily="$body"
+              // size="$9"
+              animation="slow"
+            >
+              {children}
+            </H1>
+          </Theme>
+          <Theme name={orderOfThemes[2]}>
+            <H1
+              y={0}
+              x={0}
+              color="$color"
+              letterSpacing={-0.4}
+              animation="slow"
+              fontFamily="$body"
+              // size="$9"
+              pos="absolute"
+            >
+              {children}
+            </H1>
+          </Theme>
+          <Theme name={orderOfThemes[1]}>
+            <H1
+              y={headerHover ? -2 : 0}
+              x={headerHover ? 2 : 0}
+              color="$color"
+              letterSpacing={-0.4}
+              fontFamily="$body"
+              // size="$9"
+              animation="slow"
+              pos="absolute"
+            >
+              {children}
+            </H1>
+          </Theme>
+          <Theme name={orderOfThemes[0]}>
+            <H1
+              y={headerHover ? -4 : 0}
+              x={headerHover ? 4 : 0}
+              fontFamily="$body"
+              // size="$9"
+              animation="slow"
+              pos="absolute"
+              color="$color"
+            >
+              {children}
+            </H1>
+          </Theme>
+          <Theme>
+            <H1
+              y={headerHover ? -6 : 0}
+              x={headerHover ? 6 : 0}
+              animation="slow"
+              fontFamily="$body"
+              // size="$9"
+              pos="absolute"
+              color="$color"
+            >
+              {children}
+            </H1>
+          </Theme>
+        </View>
+      </YStack>
+    </>
   )
 }
