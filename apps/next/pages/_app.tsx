@@ -3,18 +3,28 @@ import '@tamagui/font-inter/css/400.css'
 import '@tamagui/font-inter/css/700.css'
 import 'raf/polyfill'
 
-import React from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import Head from 'next/head'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
-import type { SolitoAppProps } from 'solito'
 import { Provider } from 'app/provider'
+import { AppProps } from 'next/app'
+import { NextPage } from 'next'
+import type { SolitoAppProps } from 'solito'
 
 if (process.env.NODE_ENV === 'production') {
   require('../public/tamagui.css')
 }
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+export type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
+  const getLayout = Component.getLayout || ((page) => page)
   return (
     <>
       <Head>
@@ -30,7 +40,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
         />
       </Head>
       <ThemeProvider>
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
         {process.env.NODE_ENV !== 'production' && <GoogleAnalytics gaId="G-M7M1C0YG29" />}
       </ThemeProvider>
     </>

@@ -1,8 +1,10 @@
 import { PostScreen } from 'app/features/blog/post-screen'
+import { PostLayout } from '@my/ui'
 import { getAllPosts, getPostBySlug, GetPostBySlug } from 'posts'
 import { GetStaticProps } from 'next'
 
 import type { GetStaticPaths, InferGetStaticPropsType } from 'next'
+import { NextPageWithLayout } from 'pages/_app'
 type PageProps = { source: GetPostBySlug }
 
 export const getStaticProps = (async (props) => {
@@ -27,7 +29,13 @@ export const getStaticPaths = (async () => {
   }
 }) as GetStaticPaths
 
-export default function Page(props: InferGetStaticPropsType<typeof getStaticProps>) {
+const Page: NextPageWithLayout<InferGetStaticPropsType<typeof getStaticProps>> = (props) => {
   const { source } = props
   return <PostScreen source={source.source} />
 }
+
+Page.getLayout = (page) => {
+  return <PostLayout>{page}</PostLayout>
+}
+
+export default Page

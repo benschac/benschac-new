@@ -85,61 +85,59 @@ const components = {
 
 export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
   return (
-    <Layout>
-      <Suspense fallback={<YStack>Loading...</YStack>}>
-        <YStack
+    <Suspense fallback={<YStack>Loading...</YStack>}>
+      <YStack
+        // @ts-expect-error
+        maw="81ch"
+        mx="auto"
+        $sm={{
+          px: '$0',
+        }}
+        // px="$3"
+        jc="center"
+        ai="center"
+        // @ts-expect-error
+        mih="25vh"
+      >
+        <H1
+          ta="center"
+          $sm={{
+            fontSize: '$9',
+          }}
           // @ts-expect-error
-          maw="81ch"
-          mx="auto"
+          letterSpacing="-1px"
+        >
+          {props.source.frontmatter.title}
+        </H1>
+      </YStack>
+      <Spacer size="$4" />
+      <YStack
+        bg="$background075"
+        borderRadius="$10"
+        borderColor="$accentBackground"
+        borderCurve="continuous"
+        shadowColor="$shadowColor"
+        shadowRadius="$3"
+        px="$10"
+        $sm={{ px: '$2' }}
+        py="$9"
+        mx="auto"
+      >
+        <YStack
           $sm={{
             px: '$0',
+            overflow: 'hidden',
           }}
-          // px="$3"
-          jc="center"
-          ai="center"
+          f={1}
+          rowGap="$6"
           // @ts-expect-error
-          mih="25vh"
+          maw="80ch"
         >
-          <H1
-            ta="center"
-            $sm={{
-              fontSize: '$9',
-            }}
-            // @ts-expect-error
-            letterSpacing="-1px"
-          >
-            {props.source.frontmatter.title}
-          </H1>
+          {/* @ts-expect-error */}
+          <MDXRemote components={components} {...props.source} />
         </YStack>
-        <Spacer size="$4" />
-        <YStack
-          bg="$background075"
-          borderRadius="$10"
-          borderColor="$accentBackground"
-          borderCurve="continuous"
-          shadowColor="$shadowColor"
-          shadowRadius="$3"
-          px="$10"
-          $sm={{ px: '$2' }}
-          py="$9"
-          mx="auto"
-        >
-          <YStack
-            $sm={{
-              px: '$0',
-              overflow: 'hidden',
-            }}
-            f={1}
-            rowGap="$6"
-            // @ts-expect-error
-            maw="80ch"
-          >
-            {/* @ts-expect-error */}
-            <MDXRemote components={components} {...props.source} />
-          </YStack>
-        </YStack>
-        <Spacer size="$10" />
-      </Suspense>
-    </Layout>
+      </YStack>
+      <Spacer size="$10" />
+    </Suspense>
   )
 }
