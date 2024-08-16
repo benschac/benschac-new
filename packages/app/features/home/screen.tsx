@@ -40,8 +40,23 @@ export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
               <YStack cursor="pointer" {...blogLink}>
                 <YStack rowGap="$2">
                   <H5 size="$6">{new Date(date as string).toLocaleDateString()}</H5>
-                  {/* @ts-expect-error */}
-                  <H1 letterSpacing="-1px">{title}</H1>
+                  <H1
+                    fontStyle="italic"
+                    fontSize="$12"
+                    color="$color"
+                    // lineHeight={1.2}
+                    textShadowColor="$background"
+                    textShadowRadius={2}
+                    textShadowOffset={{ width: 5, height: 2 }}
+                    fontWeight="400"
+                    $sm={{
+                      fontSize: '$9',
+                    }}
+                    // @ts-expect-error
+                    letterSpacing="-1px"
+                  >
+                    {title}
+                  </H1>
                   <XStack columnGap="$2">
                     <XStack columnGap="$2">
                       {tags?.map((tag: string, idx: number) => {
@@ -49,11 +64,25 @@ export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
                           <Theme key={`${blogLink.href}-${tag}`}>
                             <Paragraph
                               bg="$color"
-                              br="$2"
                               color="$background"
-                              key={idx}
-                              px="$2"
-                              size="$1"
+                              px="$3"
+                              py="$1"
+                              borderRadius="$3"
+                              fontStyle="normal"
+                              fontSize="$4"
+                              fontWeight="400"
+                              // @ts-expect-error
+                              lineHeight="1.56"
+                              // @ts-expect-error
+                              letterSpacing="-0.54px"
+                              // @ts-expect-error
+                              style={{
+                                textRendering: 'optimizelegibility',
+                                fontSmoothing: 'antialiased',
+                                WebkitFontSmoothing: 'antialiased',
+                              }}
+                              textRendering="optimizelegibility"
+                              mt="$3"
                             >
                               {tag}
                             </Paragraph>
@@ -64,7 +93,25 @@ export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
                   </XStack>
                 </YStack>
                 <Spacer size="$4" />
-                <Paragraph>{description}</Paragraph>
+                <Paragraph
+                  fontStyle="normal"
+                  fontSize="$5"
+                  fontWeight="400"
+                  // @ts-expect-error
+                  lineHeight="1.56"
+                  // @ts-expect-error
+                  letterSpacing="-0.54px"
+                  // @ts-expect-error
+                  style={{
+                    textRendering: 'optimizelegibility',
+                    fontSmoothing: 'antialiased',
+                    WebkitFontSmoothing: 'antialiased',
+                  }}
+                  textRendering="optimizelegibility"
+                  mt="$3"
+                >
+                  {description}
+                </Paragraph>
               </YStack>
               <Separator />
             </React.Fragment>
