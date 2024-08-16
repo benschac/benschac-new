@@ -42,7 +42,23 @@ const components = {
   h2: H2,
   Spacer: Spacer,
   h3: H3,
-  p: (props) => <Paragraph mt="$3" {...props} />,
+  p: (props) => (
+    <Paragraph
+      fontStyle="normal"
+      fontSize="$5"
+      fontWeight="400"
+      lineHeight="1.56"
+      letterSpacing="-0.54px"
+      style={{
+        textRendering: 'optimizelegibility',
+        fontSmoothing: 'antialiased',
+        WebkitFontSmoothing: 'antialiased',
+      }}
+      textRendering="optimizelegibility"
+      mt="$3"
+      {...props}
+    />
+  ),
   AnimatedHeader,
   li: ListItem,
   blockquote: Blockquote,
@@ -103,6 +119,13 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
       >
         <H1
           ta="center"
+          fontStyle="italic"
+          fontSize="$12"
+          color="$color"
+          textShadowColor="$background"
+          textShadowRadius={2}
+          textShadowOffset={{ width: 5, height: 2 }}
+          fontWeight="400"
           $sm={{
             fontSize: '$9',
           }}

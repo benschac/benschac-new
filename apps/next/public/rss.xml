@@ -2,64 +2,71 @@
     <channel>
         <title><![CDATA[bensch.ac's blog | RSS Feed]]></title>
         <description><![CDATA[posts on engineering, design, and more]]></description>
-        <link>http://bensch.ac</link>
+        <link>http://localhost:3000</link>
         <image>
-            <url>http://bensch.ac/logo.jpeg</url>
+            <url>http://localhost:3000/logo.jpeg</url>
             <title>bensch.ac&apos;s blog | RSS Feed</title>
-            <link>http://bensch.ac</link>
+            <link>http://localhost:3000</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 15 Aug 2024 23:25:25 GMT</lastBuildDate>
-        <atom:link href="http://bensch.ac/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 15 Aug 2024 23:25:25 GMT</pubDate>
+        <lastBuildDate>Fri, 16 Aug 2024 16:32:14 GMT</lastBuildDate>
+        <atom:link href="http://localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Fri, 16 Aug 2024 16:32:14 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2024]]></copyright>
         <item>
             <title><![CDATA[Fixing React Native Universal FS Node Module Not Supported Error]]></title>
             <description><![CDATA[A quick debugging session on how fixing the error "The package at "../../node_modules/next/dist/compiled/gzip-size/index.js" attempted to import the Node standard library module "fs".]]></description>
-            <link>http://bensch.ac/blog/fixing-react-native-universal-fs-node-module</link>
-            <guid isPermaLink="true">http://bensch.ac/blog/fixing-react-native-universal-fs-node-module</guid>
+            <link>http://localhost:3000/blog/fixing-react-native-universal-fs-node-module</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/fixing-react-native-universal-fs-node-module</guid>
+            <pubDate>Wed, 14 Aug 2024 05:35:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How to Configure and Package Fonts with Tamagui]]></title>
+            <description><![CDATA[Documenting my journey for both my future self and others who might run into the same problem.]]></description>
+            <link>http://localhost:3000/blog/how-to-configure-and-package-fonts-with-tamagui</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/how-to-configure-and-package-fonts-with-tamagui</guid>
             <pubDate>Wed, 14 Aug 2024 05:35:07 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Half Batch Summer 2 Recurse Center Return Statement]]></title>
             <description><![CDATA[A reflection on my time and experience during a 6-week half batch]]></description>
-            <link>http://bensch.ac/blog/return-statement</link>
-            <guid isPermaLink="true">http://bensch.ac/blog/return-statement</guid>
+            <link>http://localhost:3000/blog/return-statement</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/return-statement</guid>
             <pubDate>Mon, 12 Aug 2024 16:52:45 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[What I Learned by Fixing One Line of CSS in an Open Source Project]]></title>
             <description><![CDATA[I was browsing the Svelte docs on my iPhone and came across a blaring UI bug. The notch in the REPL knob was totally out of whack.]]></description>
-            <link>http://bensch.ac/blog/what-i-learned-fixing-one-line-of-css-in-svelte</link>
-            <guid isPermaLink="true">http://bensch.ac/blog/what-i-learned-fixing-one-line-of-css-in-svelte</guid>
+            <link>http://localhost:3000/blog/what-i-learned-fixing-one-line-of-css-in-svelte</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/what-i-learned-fixing-one-line-of-css-in-svelte</guid>
             <pubDate>Fri, 14 Aug 2020 16:52:45 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[What I learned from failure]]></title>
             <description><![CDATA[“Failure free operations require continuous experience with failure”]]></description>
-            <link>http://bensch.ac/blog/what-i-learned-from-failure</link>
-            <guid isPermaLink="true">http://bensch.ac/blog/what-i-learned-from-failure</guid>
+            <link>http://localhost:3000/blog/what-i-learned-from-failure</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/what-i-learned-from-failure</guid>
             <pubDate>Wed, 26 Sep 2018 12:17:51 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Here’s what I’ve learned nine months into my software engineering job]]></title>
             <description><![CDATA[I’ve been working for about nine months at Dexter as a software developer. I wrote a blog post about landing the job initially, as well as…]]></description>
-            <link>http://bensch.ac/blog/what-i-learned-9-months-into-my-first-programming-job</link>
-            <guid isPermaLink="true">http://bensch.ac/blog/what-i-learned-9-months-into-my-first-programming-job</guid>
+            <link>http://localhost:3000/blog/what-i-learned-9-months-into-my-first-programming-job</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/what-i-learned-9-months-into-my-first-programming-job</guid>
             <pubDate>Sun, 28 Jan 2018 16:52:45 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Self Positioning React Components]]></title>
             <description><![CDATA[A big thanks to Dexter engineering specifically Daniel Ilkovich and David Hu for letting me share this code and all of their help and…]]></description>
-            <link>http://bensch.ac/blog/self-positioning-react-components</link>
-            <guid isPermaLink="true">http://bensch.ac/blog/self-positioning-react-components</guid>
+            <link>http://localhost:3000/blog/self-positioning-react-components</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/self-positioning-react-components</guid>
             <pubDate>Wed, 23 Aug 2017 05:35:07 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How I got my first development job, and what I’m going to do next]]></title>
             <description><![CDATA[Breaking into a new industry or role is difficult. Learning a new set of skills and getting a job using them is just that, difficult. You…]]></description>
-            <link>http://bensch.ac/blog/how-i-got-my-first-developer-job</link>
-            <guid isPermaLink="true">http://bensch.ac/blog/how-i-got-my-first-developer-job</guid>
+            <link>http://localhost:3000/blog/how-i-got-my-first-developer-job</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/how-i-got-my-first-developer-job</guid>
             <pubDate>Sat, 22 Jul 2017 16:03:01 GMT</pubDate>
         </item>
     </channel>

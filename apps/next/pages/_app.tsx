@@ -1,6 +1,9 @@
 import '@tamagui/core/reset.css'
+import { Playfair_Display } from 'next/font/google'
+import { Source_Serif_4, EB_Garamond } from 'next/font/google'
 import '@tamagui/font-inter/css/400.css'
 import '@tamagui/font-inter/css/700.css'
+// import '@tamagui-google-fonts/source-serif-4/dist/'
 import 'raf/polyfill'
 
 import React, { ReactElement, ReactNode } from 'react'
@@ -10,9 +13,10 @@ import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
 import { Provider } from 'app/provider'
 import { AppProps } from 'next/app'
 import { NextPage } from 'next'
-import { Source_Serif_4 } from 'next/font/google'
+// import { Source_Serif_4 } from 'next/font/google'
 
 import type { SolitoAppProps } from 'solito'
+import { isWeb } from 'tamagui'
 
 if (process.env.NODE_ENV === 'production') {
   require('../public/tamagui.css')
@@ -24,14 +28,21 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 export type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
-export const font = Source_Serif_4({
+const bodyFont = Source_Serif_4({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--my-font',
+  variable: '--my-body-font',
+})
+
+const displayFont = EB_Garamond({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--my-display-font',
 })
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
   const getLayout = Component.getLayout || ((page) => page)
+  console.log(isWeb)
   return (
     <>
       <Head>
@@ -66,7 +77,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
       }}
     >
       <Provider disableRootThemeClass disableInjectCSS defaultTheme={theme}>
-        <div className={font.variable}>{children}</div>
+        <div className={`${bodyFont.variable} ${displayFont.variable}`}>{children}</div>
       </Provider>
     </NextThemeProvider>
   )

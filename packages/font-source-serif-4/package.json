@@ -5,6 +5,7 @@
   "main": "dist/cjs",
   "module": "dist/esm",
   "module:jsx": "dist/jsx",
+  "exports": {},
   "files": [
     "types",
     "dist",
@@ -15,7 +16,8 @@
     "build": "tamagui-build",
     "watch": "tamagui-build --watch",
     "clean": "tamagui-build clean",
-    "clean:build": "tamagui-build clean:build"
+    "clean:build": "tamagui-build clean:build",
+    "subset": "node -r esbuild-register subset.ts"
   },
   "peerDependencies": {
     "@tamagui/core": "*"

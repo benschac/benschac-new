@@ -35,6 +35,10 @@ export default class Document extends NextDocument {
       <style jsx global>{`
         html {
         }
+        p {
+          text-rendering: optimizeLegibility;
+          font-smoothing: antialiased;
+        }
       `}</style>,
     ]
 

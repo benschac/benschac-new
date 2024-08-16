@@ -1,0 +1,38 @@
+---
+title: How to Configure and Package Fonts with Tamagui
+description: >-
+  Documenting my journey for both my future self and others who might run into the same problem.
+date: '2024-08-14T05:35:07.322Z'
+slug: 'how-to-configure-and-package-fonts-with-tamagui'
+publication: 'freeCodeCamp'
+tags:
+  - react-native
+  - typescript
+  - node
+  - debugging
+author:
+  name: benjamin
+  picture: ''
+ogImage:
+  url: ''
+---
+
+# How To Configure and Package Fonts with Tamagui
+
+Documenting my journey for both my future self and others who might run into the same problem.
+
+## Problem
+
+I was trying to add a font using Tamagui's font generation tool, but, the correct font wasn't being rendered to the web.
+
+Importing both the correct font files for web, mobile and general configuration is tetious, and error prone and just generally something that most developers don't want to spend time on.
+
+### Using the correct file type
+
+For web using the `woff2` file type is the most performant, and generally the best option. For mobile, using the `otf` file type.
+
+### Base64 encoding
+
+I did a bit of searching and didn't find a compelling reason to use base64 encoding for fonts. [It's generally not recommended, and can cause performance issues](https://csswizardry.com/2017/02/base64-encoding-and-performance/).
+
+## Solution
