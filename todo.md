@@ -1,6 +1,7 @@
 # TODOs
 
 - add css formatting to single line `code` blocks in MDX renderer
+- add bullet list styles
 
 # Debugging broken build
 

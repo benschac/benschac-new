@@ -57,7 +57,7 @@ export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
                   >
                     {title}
                   </H1>
-                  <XStack columnGap="$2">
+                  <XStack overflow="scroll" miw={0} columnGap="$2">
                     <XStack columnGap="$2">
                       {tags?.map((tag: string, idx: number) => {
                         return (

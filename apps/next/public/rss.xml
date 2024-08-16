@@ -9,22 +9,22 @@
             <link>http://localhost:3000</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 16 Aug 2024 18:05:45 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Aug 2024 20:32:11 GMT</lastBuildDate>
         <atom:link href="http://localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 16 Aug 2024 18:05:45 GMT</pubDate>
+        <pubDate>Fri, 16 Aug 2024 20:32:11 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2024]]></copyright>
+        <item>
+            <title><![CDATA[How to Configure and Package Fonts with Tamagui and Next.js]]></title>
+            <description><![CDATA[Documenting my journey for both my future self and others who might run into the same problem.]]></description>
+            <link>http://localhost:3000/blog/how-to-configure-and-package-fonts-with-tamagui</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/how-to-configure-and-package-fonts-with-tamagui</guid>
+            <pubDate>Fri, 16 Aug 2024 05:35:07 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Fixing React Native Universal FS Node Module Not Supported Error]]></title>
             <description><![CDATA[A quick debugging session on how fixing the error "The package at "../../node_modules/next/dist/compiled/gzip-size/index.js" attempted to import the Node standard library module "fs".]]></description>
             <link>http://localhost:3000/blog/fixing-react-native-universal-fs-node-module</link>
             <guid isPermaLink="true">http://localhost:3000/blog/fixing-react-native-universal-fs-node-module</guid>
-            <pubDate>Wed, 14 Aug 2024 05:35:07 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[How to Configure and Package Fonts with Tamagui]]></title>
-            <description><![CDATA[Documenting my journey for both my future self and others who might run into the same problem.]]></description>
-            <link>http://localhost:3000/blog/how-to-configure-and-package-fonts-with-tamagui</link>
-            <guid isPermaLink="true">http://localhost:3000/blog/how-to-configure-and-package-fonts-with-tamagui</guid>
             <pubDate>Wed, 14 Aug 2024 05:35:07 GMT</pubDate>
         </item>
         <item>

@@ -17,8 +17,6 @@ ogImage:
   url: ''
 ---
 
-# How To Configure and Package Fonts with Tamagui
-
 Documenting my journey for both my future self and others who might run into the same problem.
 
 ## Problem
@@ -29,10 +27,10 @@ Importing both the correct font files for web, mobile and general configuration 
 
 After digging around the generated package a bit, there were a couple of issues that stuck out:
 
-- Only `.ttf` files were generated and packaged. For web projects `.woff2` files are generally the best option, [for many reasons](https://fonts.google.com/knowledge/glossary/web_font).
-- There was no `.css` files generated or rendered with the page.
-- There are a couple of hardcoded css variables that are used in the generated package.
-- Only the `font-family` was added to the component without changing the actual font being rendered to the screen.
+Only `.ttf` files were generated and packaged. For web projects `.woff2` files are generally the best option, [for many reasons](https://fonts.google.com/knowledge/glossary/web_font).
+There was no `.css` files generated or rendered with the page.
+There are a couple of hardcoded css variables that are used in the generated package.
+Only the `font-family` was added to the component without changing the actual font being rendered to the screen.
 
 ### Using the correct file type
 
@@ -42,26 +40,26 @@ For web using the `.woff2` file type is the most performant, and generally the b
 
 The `@tamagui/inter` package that is shipped by default was my starting place after trying to configure fonts generated with the tamagui cli tool.
 
-### Digging into `@tamagui/inter`
+## Digging into `@tamagui/inter`
 
 There were a couple of things that I noticed that were different from the generated package and the `@tamagui/inter` package.
 
-- Fonts are `base64` via `subset.ts` encoding for the fonts, which is generally [not recommended](https://csswizardry.com/2017/02/base64-encoding-and-performance/).
-- It exported a `css` file that was imported into the project.
+Fonts are `base64` via `subset.ts` encoding for the fonts, which is generally [not recommended](https://csswizardry.com/2017/02/base64-encoding-and-performance/).
+It exported a `css` file that was imported into the project.
 
-### Looking at the Tamagui.dev website source code
+## Looking at the Tamagui.dev website source code
 
 `cmd + shift + u` and searching on `.woff2`, fonts are being loaded from `public/` and served like any regular font.
 
-### Base64 encoding
+## Base64 encoding
 
 I did a bit of searching and didn't find a compelling reason to use base64 encoding for fonts. [It's generally not recommended, and can cause performance issues](https://csswizardry.com/2017/02/base64-encoding-and-performance/).
 
 ## Solution
 
-- Add [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to your `_app.tsx` file.
-- Add a className and font variable in your root.
-- Pull out a generic `createFont` function from `@tamagui/inter` and use it in your project.
+Add [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to your `_app.tsx` file.
+Add a className and font variable in your root.
+Pull out a generic `createFont` function from `@tamagui/inter` and use it in your project.
 
 ```tsx
 import '@tamagui/core/reset.css'
