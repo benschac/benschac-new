@@ -3626,7 +3626,7 @@ __metadata:
   resolution: "@tamagui-google-fonts/source-serif-4@workspace:packages/font-source-serif-4"
   dependencies:
     "@tamagui/build": "npm:^1.108.3"
-    subset-font: "npm:^2.3.0"
+    subset-font: "npm:^1.6.1"
   peerDependencies:
     "@tamagui/core": "*"
   languageName: unknown
@@ -10761,7 +10761,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"harfbuzzjs@npm:^0.3.0, harfbuzzjs@npm:^0.3.5":
+"harfbuzzjs@npm:^0.3.0":
   version: 0.3.6
   resolution: "harfbuzzjs@npm:0.3.6"
   checksum: 10/265087b6299c24ea2a8ef06a09b115c3a34a8d19f724e8249c1dfa4e4bd0026dae214b52e7e9aae1d4ec382d7c7d670ce744d1dba5d57c8ea7c724cd2dc4a3c1
@@ -17317,18 +17317,6 @@ __metadata:
     lodash: "npm:^4.17.21"
     p-limit: "npm:^3.1.0"
   checksum: 10/50b4595d3a52c4bae988c2d53bcf352b19265bc72b36be3217983662acefc3f563a238132387e3d20cf48ba724ae17221855c688b1b845a0e54e0b8cdadd80aa
-  languageName: node
-  linkType: hard
-
-"subset-font@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "subset-font@npm:2.3.0"
-  dependencies:
-    fontverter: "npm:^2.0.0"
-    harfbuzzjs: "npm:^0.3.5"
-    lodash: "npm:^4.17.21"
-    p-limit: "npm:^3.1.0"
-  checksum: 10/13c7cc1f199fba77318a29da1921f39361084a27010cf9fce98173e94c65395e8d1a7feffb257f3901c50118dd1ee1ece73e19d3a408fd47b2ca813b56189f88
   languageName: node
   linkType: hard
 
