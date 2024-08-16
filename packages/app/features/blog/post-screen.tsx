@@ -39,9 +39,40 @@ const components = {
     <Image maxWidth="100%" objectFit="cover" {...props} />
   ),
   h1: H1,
-  h2: H2,
+  h2: (props) => (
+    <H2
+      color="$color"
+      fontSize="$9"
+      lineHeight="1.56"
+      letterSpacing="-0.54px"
+      style={{
+        textRendering: 'optimizelegibility',
+        fontSmoothing: 'antialiased',
+        WebkitFontSmoothing: 'antialiased',
+      }}
+      textRendering="optimizelegibility"
+      mt="$3"
+      {...props}
+    />
+  ),
   Spacer: Spacer,
-  h3: H3,
+  h3: (props) => (
+    <H3
+      fontStyle="normal"
+      fontSize="$7"
+      fontWeight="400"
+      lineHeight="1.56"
+      letterSpacing="-0.54px"
+      style={{
+        textRendering: 'optimizelegibility',
+        fontSmoothing: 'antialiased',
+        WebkitFontSmoothing: 'antialiased',
+      }}
+      textRendering="optimizelegibility"
+      mt="$3"
+      {...props}
+    />
+  ),
   p: (props) => (
     <Paragraph
       fontStyle="normal"
