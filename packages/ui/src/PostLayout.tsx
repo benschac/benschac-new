@@ -38,6 +38,13 @@ interface Line {
   targetRotation: number
   color: string
 }
+const generateColor = (): string => {
+  const hue = Math.floor(Math.random() * 360)
+  const saturation = Math.floor(Math.random() * 30) + 70 // 70-100%
+  const lightness = Math.floor(Math.random() * 30) + 35 // 35-65%
+  const alpha = 0.6 // Increase this value for more opacity (0.0 to 1.0)
+  return `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`
+}
 
 export const ColorfulSVGPattern = (): JSX.Element => {
   const [lines, setLines] = useState<Line[]>([])
@@ -46,14 +53,6 @@ export const ColorfulSVGPattern = (): JSX.Element => {
   const animationRef = useRef<number | null>(null)
   const { width, height } = useWindowDimensions()
   const lineLength = 2
-
-  const generateColor = (): string => {
-    const hue = Math.floor(Math.random() * 360)
-    const saturation = Math.floor(Math.random() * 30) + 70 // 70-100%
-    const lightness = Math.floor(Math.random() * 30) + 35 // 35-65%
-    const alpha = 0.6 // Increase this value for more opacity (0.0 to 1.0)
-    return `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`
-  }
 
   useEffect(() => {
     const generateGrid = () => {
