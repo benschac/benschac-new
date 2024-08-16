@@ -139,7 +139,11 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
       {/* <Spacer size="$4" /> */}
       <YStack f={1}>
         <YStack
-          bg="$background075"
+          bg="rgba(255, 255, 255, 0.07)"
+          backdropFilter="blur(3.8px)"
+          style={{
+            WebkitBackdropFilter: 'blur(3.8px)',
+          }}
           borderRadius="$10"
           borderColor="$accentBackground"
           borderCurve="continuous"
