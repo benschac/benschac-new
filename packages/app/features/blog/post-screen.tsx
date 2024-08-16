@@ -120,8 +120,9 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
         <H1
           ta="center"
           fontStyle="italic"
-          fontSize="$12"
+          fontSize="$11"
           color="$color"
+          // lineHeight={1.2}
           textShadowColor="$background"
           textShadowRadius={2}
           textShadowOffset={{ width: 5, height: 2 }}
