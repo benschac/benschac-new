@@ -8,7 +8,6 @@ import { NextPageWithLayout } from 'pages/_app'
 type PageProps = { source: GetPostBySlug }
 
 export const getStaticProps = (async (props) => {
-  console.log(props)
   const post = Array.isArray(props?.params?.post) ? props?.params?.post[0] : props?.params?.post
   if (!post) {
     return {

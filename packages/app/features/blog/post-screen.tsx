@@ -1,23 +1,34 @@
-import {
-  H1,
-  H2,
-  H3,
-  AnimatedHeader,
-  ListItem,
-  Paragraph,
-  Spacer,
-  Image,
-  Layout,
-  YStack,
-  XStack,
-  styled,
-  ColorfulSVGPattern,
-} from '@my/ui'
+import { H1, H2, H3, AnimatedHeader, Paragraph, Spacer, Image, YStack, styled } from '@my/ui'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { Suspense } from 'react'
+
+const UnorderedList = styled(YStack, {
+  tag: 'ul',
+  display: 'block',
+})
+
+const ListItem = styled(Paragraph, {
+  tag: 'li',
+  ml: '$4',
+  pl: '$1',
+  // @ts-expect-error
+  display: 'list-item',
+  fontStyle: 'normal',
+  fontSize: '$5',
+  fontWeight: '400',
+  // @ts-expect-error
+  lineHeight: '1.56',
+  // @ts-expect-error
+  letterSpacing: '-0.54px',
+  textRendering: 'optimizelegibility',
+  style: {
+    textRendering: 'optimizeLegibility',
+    WebkitFontSmoothing: 'antialiased',
+  },
+})
 
 const Blockquote = styled(YStack, {
   tag: 'blockquote',
@@ -31,6 +42,18 @@ const Blockquote = styled(YStack, {
   $sm: {
     px: '$2',
   },
+})
+
+const InlineCodeBlock = styled(Paragraph, {
+  tag: 'code',
+  bg: '$backgroundFocus',
+  color: '$red10',
+  fontFamily: '$mono',
+  px: '$1',
+  py: '$1',
+  br: '$2',
+  // borderWidth: '$1',
+  // borderStyle: 'solid',
 })
 
 const components = {
@@ -56,6 +79,8 @@ const components = {
     />
   ),
   Spacer: Spacer,
+  ul: UnorderedList,
+  li: ListItem,
   h3: (props) => (
     <H3
       fontStyle="normal"
@@ -81,7 +106,7 @@ const components = {
       lineHeight="1.56"
       letterSpacing="-0.54px"
       style={{
-        textRendering: 'optimizelegibility',
+        textRendering: 'optimizeLegibility',
         fontSmoothing: 'antialiased',
         WebkitFontSmoothing: 'antialiased',
       }}
@@ -114,12 +139,11 @@ const components = {
         {...props}
       />
     ) : (
-      <span
+      <InlineCodeBlock
         style={
           {
             // TODO: single line code block styles
             // overflowX: 'hidden',
-            // background: 'red',
             // display: 'block',
           }
         }
@@ -127,7 +151,7 @@ const components = {
         {...props}
       >
         {children}
-      </span>
+      </InlineCodeBlock>
     )
   },
 }
@@ -170,29 +194,33 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
       {/* <Spacer size="$4" /> */}
       <YStack f={1}>
         <YStack
-          bg="rgba(255, 255, 255, 0.07)"
-          backdropFilter="blur(3.8px)"
-          style={{
-            WebkitBackdropFilter: 'blur(3.8px)',
-          }}
-          borderRadius="$10"
-          borderColor="$accentBackground"
-          borderCurve="continuous"
-          shadowColor="$shadowColor"
-          shadowRadius="$3"
-          $sm={{ px: '$2' }}
-          py="$8"
-          px="$6"
-          mx="auto"
+          // mx="auto"
+          ai="center"
+          // mx="$4.5"
+          px="$4.5"
         >
           <YStack
+            bg="rgba(255, 255, 255, 0.07)"
+            backdropFilter="blur(3.8px)"
+            style={{
+              WebkitBackdropFilter: 'blur(3.8px)',
+            }}
+            borderRadius="$10"
+            borderColor="$accentBackground"
+            shadowColor="$shadowColor"
+            shadowRadius="$3"
+            py="$10"
             $sm={{
               px: '$2',
             }}
+            px="$10"
             f={1}
-            px="$4"
+            // TOOD: this isn't my favorite way to do this
+            // pretty sure there's a css negative margin way to do this
+            // I'm making the container wider than what I want the line width
+            // to be
             // @ts-expect-error
-            maw="80ch"
+            maw="90ch"
           >
             {/* @ts-expect-error */}
             <MDXRemote components={components} {...props.source} />

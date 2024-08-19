@@ -1,6 +1,6 @@
 import '@tamagui/core/reset.css'
 import { Playfair_Display } from 'next/font/google'
-import { Source_Serif_4, EB_Garamond } from 'next/font/google'
+import { Source_Serif_4, EB_Garamond, Space_Mono } from 'next/font/google'
 import '@tamagui/font-inter/css/400.css'
 import '@tamagui/font-inter/css/700.css'
 // import '@tamagui-google-fonts/source-serif-4/dist/'
@@ -40,6 +40,13 @@ const displayFont = EB_Garamond({
   variable: '--my-display-font',
 })
 
+const monoFont = Space_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--my-mono-font',
+})
+
 function MyApp({ Component, pageProps }: SolitoAppProps) {
   const getLayout = Component.getLayout || ((page) => page)
   console.log(isWeb)
@@ -77,7 +84,9 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
       }}
     >
       <Provider disableRootThemeClass disableInjectCSS defaultTheme={theme}>
-        <div className={`${bodyFont.variable} ${displayFont.variable}`}>{children}</div>
+        <div className={`${bodyFont.variable} ${displayFont.variable} ${monoFont.variable}`}>
+          {children}
+        </div>
       </Provider>
     </NextThemeProvider>
   )

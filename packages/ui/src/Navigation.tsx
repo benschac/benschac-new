@@ -38,8 +38,7 @@ export const Navigation = () => {
         pos="sticky"
         t="$4"
         bg="rgba(255, 255, 255, 0.07)"
-        borderRadius="$10"
-        borderCurve="continuous"
+        borderRadius="$4"
         shadowColor="$shadowColor"
         mx="$3"
         shadowRadius="$3"
@@ -61,13 +60,13 @@ export const Navigation = () => {
           px="$5"
           py="$6"
           pos="relative"
+          onPress={() => {
+            router.push('/')
+          }}
         >
           <View
             pos="relative"
             ai="center"
-            onPress={() => {
-              router.push('/')
-            }}
             onMouseEnter={() => setHeaderHover(true)}
             onMouseLeave={() => setHeaderHover(false)}
           >

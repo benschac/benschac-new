@@ -22,7 +22,6 @@ import {
 import { useLink } from 'solito/navigation'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import React from 'react'
-type Props = { source: MDXRemoteSerializeResult }
 
 export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
   const { source } = props

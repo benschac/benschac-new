@@ -9462,10 +9462,12 @@ __metadata:
     babel-plugin-module-resolver: "npm:^5.0.2"
     burnt: "npm:^0.12.2"
     expo: "npm:^51.0.9"
+    expo-blur: "npm:~13.0.2"
     expo-constants: "npm:~16.0.2"
     expo-dev-client: "npm:~4.0.15"
     expo-font: "npm:~12.0.6"
     expo-haptics: "npm:~13.0.1"
+    expo-image: "npm:~1.12.13"
     expo-linear-gradient: "npm:~13.0.2"
     expo-linking: "npm:~6.3.1"
     expo-location: "npm:~17.0.1"
@@ -9503,6 +9505,15 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: 10/6b1f90216ea5e2c785193528bdf2d5855f7089a39235149793130de77fa49b91ed4b6c131935e035598c08859b0fe0f7279a444f7c88d1261389dff303266409
+  languageName: node
+  linkType: hard
+
+"expo-blur@npm:~13.0.2":
+  version: 13.0.2
+  resolution: "expo-blur@npm:13.0.2"
+  peerDependencies:
+    expo: "*"
+  checksum: 10/b98260d29abf6003ada13db2c7dac10ff896935baf0bc8a4d7fe1d5a3cfcf442b3c82f191b93e8c7f84476e9e4e57706fb940b87dfce1f94025503a0fb4fd65f
   languageName: node
   linkType: hard
 
@@ -9613,6 +9624,15 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: 10/2ed8d292f89208b21fece50c2d21c4272833fd37cb769e382365a9502b844c33f582ceee374ad8d3c184cc75418ca9a6daf54005de281c0a952c7f2a39b026c9
+  languageName: node
+  linkType: hard
+
+"expo-image@npm:~1.12.13":
+  version: 1.12.13
+  resolution: "expo-image@npm:1.12.13"
+  peerDependencies:
+    expo: "*"
+  checksum: 10/5866b0ba5f499f06bbda8fb62da3a91a3cd052c2051dd85acfbdf21c093b830f01f21ca8f8a391574d4541d495f26bac59edb11096c517a94064eae334410da5
   languageName: node
   linkType: hard
 
