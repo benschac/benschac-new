@@ -46,7 +46,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <Spacer size="$4" />
       <YStack f={1}>
         <Navigation />
-        <Spacer size="$4" />
+        <Spacer size="$2" />
         <YStack f={1} tag="main">
           {children}
         </YStack>

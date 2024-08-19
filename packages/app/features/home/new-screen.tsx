@@ -40,6 +40,7 @@ const Aside = styled(YStack, {
   $sm: {
     flexDirection: 'row',
     w: '100%',
+    minWidth: '100%',
   },
 })
 
@@ -62,6 +63,9 @@ const GridItem = styled(YStack, {
   alignItems: 'flex-end',
   shadowColor: '$shadowColor',
   shadowOffset: { width: 0, height: 10 },
+  hoverStyle: {
+    cursor: 'pointer',
+  },
   shadowOpacity: 0.9,
   opacity: 0.9,
   variants: {
@@ -96,7 +100,7 @@ export function NewScreen(props: { source: MDXRemoteSerializeResult }) {
   })
   return (
     <Layout>
-      <YStack f={1} p="$4">
+      <YStack f={1} p="$3">
         <XStack
           $sm={{
             flexDirection: 'column',
