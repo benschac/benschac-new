@@ -1,4 +1,4 @@
-import { H1, Image, Layout, XStack, YStack, styled, Circle, Spacer, Paragraph } from '@my/ui'
+import { H1, Image, Layout, XStack, YStack, styled, Circle, Spacer, Paragraph, H3 } from '@my/ui'
 
 import { Twitter, Linkedin, Github, Rss } from '@tamagui/lucide-icons'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
@@ -113,6 +113,7 @@ export function NewScreen(props: { source: MDXRemoteSerializeResult }) {
                 alt="Benjamin Schachter"
               />
             </Circle>
+            <H3>One time, I ate a penny</H3>
           </Aside>
           <Spacer size="$4" />
           <Main>
