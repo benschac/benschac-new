@@ -1,6 +1,6 @@
 import { H1, Image, Layout, XStack, YStack, styled, Circle, Spacer, Paragraph, H3 } from '@my/ui'
 
-import { Twitter, Linkedin, Github, Rss } from '@tamagui/lucide-icons'
+import { Twitter, NotepadText, Linkedin, Github, Rss, Space, X, Pen } from '@tamagui/lucide-icons'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { useLink } from 'solito/navigation'
 import { useRouter } from 'solito/router'
@@ -123,37 +123,53 @@ export function NewScreen(props: { source: MDXRemoteSerializeResult }) {
           <Main>
             <Grid>
               <GridItem twitter {...twitterLink}>
-                <Twitter
-                  $theme-light={{
-                    color: '$background',
-                  }}
-                  $theme-dark={{
-                    color: '$color',
-                  }}
-                />
+                <XStack ai="center">
+                  <H3>Twitter</H3>
+                  <Spacer size="$4" />
+                  <Twitter
+                    $theme-light={{
+                      color: '$background',
+                    }}
+                    $theme-dark={{
+                      color: '$color',
+                    }}
+                  />
+                </XStack>
               </GridItem>
               <GridItem onPress={() => router.push('/blog')}>
-                <Rss />
+                <XStack ai="center">
+                  <H3>Blog</H3>
+                  <Spacer size="$4" />
+                  <NotepadText />
+                </XStack>
               </GridItem>
               <GridItem linkedin {...linkedInLink}>
-                <Linkedin
-                  $theme-light={{
-                    color: '$background',
-                  }}
-                  $theme-dark={{
-                    color: '$color',
-                  }}
-                />
+                <XStack ai="center">
+                  <H3>Linkedin</H3>
+                  <Spacer size="$4" />
+                  <Linkedin
+                    $theme-light={{
+                      color: '$color',
+                    }}
+                    $theme-dark={{
+                      color: '$color',
+                    }}
+                  />
+                </XStack>
               </GridItem>
               <GridItem bg="$color" {...gitHubLink}>
-                <Github
-                  $theme-light={{
-                    color: '$background',
-                  }}
-                  $theme-dark={{
-                    color: '$color',
-                  }}
-                />
+                <XStack themeInverse ai="center">
+                  <H3>Github</H3>
+                  <Spacer size="$4" />
+                  <Github
+                  // $theme-light={{
+                  //   color: '$background',
+                  // }}
+                  // $theme-dark={{
+                  //   color: '$color',
+                  // }}
+                  />
+                </XStack>
               </GridItem>
             </Grid>
           </Main>
