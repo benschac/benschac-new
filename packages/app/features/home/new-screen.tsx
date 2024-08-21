@@ -117,6 +117,10 @@ export function NewScreen() {
               />
             </Circle>
             <H3>One time, I ate a penny</H3>
+            <Paragraph fontWeight="bold" lineHeight="$1" ta="center">
+              I also write mobile and web applications in TypeScript and currently looking for my
+              next role.
+            </Paragraph>
           </Aside>
           <Spacer size="$4" />
           <Main>
