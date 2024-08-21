@@ -107,7 +107,11 @@ export function NewScreen() {
           f={1}
           rowGap="$4"
         >
-          <Aside>
+          <Aside
+            $sm={{
+              flexDirection: 'column',
+            }}
+          >
             <Circle size={150}>
               <Image
                 h={150}
