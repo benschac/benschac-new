@@ -84,8 +84,7 @@ const GridItem = styled(YStack, {
   },
 })
 
-export function NewScreen(props: { source: MDXRemoteSerializeResult }) {
-  const { source } = props
+export function NewScreen() {
   const router = useRouter()
 
   const twitterLink = useLink({
@@ -124,7 +123,7 @@ export function NewScreen(props: { source: MDXRemoteSerializeResult }) {
             <Grid>
               <GridItem twitter {...twitterLink}>
                 <XStack ai="center">
-                  <H3>Twitter</H3>
+                  <H3 color="$background">Twitter</H3>
                   <Spacer size="$4" />
                   <Twitter
                     $theme-light={{
@@ -145,11 +144,11 @@ export function NewScreen(props: { source: MDXRemoteSerializeResult }) {
               </GridItem>
               <GridItem linkedin {...linkedInLink}>
                 <XStack ai="center">
-                  <H3>Linkedin</H3>
+                  <H3 themeInverse>Linkedin</H3>
                   <Spacer size="$4" />
                   <Linkedin
                     $theme-light={{
-                      color: '$color',
+                      color: '$background',
                     }}
                     $theme-dark={{
                       color: '$color',
@@ -161,14 +160,7 @@ export function NewScreen(props: { source: MDXRemoteSerializeResult }) {
                 <XStack themeInverse ai="center">
                   <H3>Github</H3>
                   <Spacer size="$4" />
-                  <Github
-                  // $theme-light={{
-                  //   color: '$background',
-                  // }}
-                  // $theme-dark={{
-                  //   color: '$color',
-                  // }}
-                  />
+                  <Github />
                 </XStack>
               </GridItem>
             </Grid>
