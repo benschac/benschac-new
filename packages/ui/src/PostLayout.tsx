@@ -1,6 +1,7 @@
-import { H1, Navigation, Spacer, Theme, YStack } from '.'
+import { Navigation, YStack } from '.'
 import React, { useState, useEffect, useRef } from 'react'
-const isomorphicWindow: Window = typeof window === 'undefined' ? {} : window
+const isomorphicWindow = typeof window === 'undefined' ? ({} as Window) : window
+
 function debounce(func: Function, wait: number) {
   let timeout: number
   return function (this: any, ...args: any[]) {
@@ -10,18 +11,30 @@ function debounce(func: Function, wait: number) {
   }
 }
 
+/**
+ *
+ * @param callback fn
+ * @param delay
+ * @returns debouncedFn
+ */
+function useDebounce(callback: Function, delay: number) {
+  const debouncedFn = useRef(debounce(callback, delay)).current
+  return debouncedFn
+}
+
 function useWindowDimensions() {
   const [dimensions, setDimensions] = useState({
     width: isomorphicWindow.innerWidth,
     height: isomorphicWindow.innerHeight,
   })
 
-  const debouncedHandleResize = debounce(() => {
-    setDimensions({
+  const debouncedSetDimensions = useDebounce(setDimensions, 100)
+
+  const debouncedHandleResize = () =>
+    debouncedSetDimensions({
       width: isomorphicWindow.innerWidth,
       height: isomorphicWindow.innerHeight,
     })
-  }, 100)
 
   useEffect(() => {
     isomorphicWindow.addEventListener('resize', debouncedHandleResize)
@@ -38,7 +51,7 @@ interface Line {
   targetRotation: number
   color: string
 }
-const generateColor = (): string => {
+const generateHSLAColor = (): string => {
   const hue = Math.floor(Math.random() * 360)
   const saturation = Math.floor(Math.random() * 30) + 70 // 70-100%
   const lightness = Math.floor(Math.random() * 30) + 35 // 35-65%
@@ -71,7 +84,7 @@ export const ColorfulSVGPattern = (): JSX.Element => {
             y: centerY,
             rotation: isHorizontal ? 0 : 90,
             targetRotation: isHorizontal ? 0 : 90,
-            color: generateColor(),
+            color: generateHSLAColor(),
           })
         }
       }

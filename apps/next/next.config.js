@@ -11,12 +11,20 @@ const withMDX = require('@next/mdx')({
     //     filename: 'static/chunks/[path][name].[hash][ext]',
     //   },
     // })
-
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
       exclude: /node_modules/,
       use: ['raw-loader', 'glslify-loader'],
     })
+    config.experiments = {
+      ...config.experiments,
+      asyncWebAssembly: true,
+    }
+    config.module.rules.push({
+      test: /\.wasm$/,
+      type: 'webassembly/async',
+    })
+
     if (!isServer) {
       config.resolve.fallback.fs = false
     }
@@ -95,6 +103,9 @@ module.exports = function () {
     ],
     experimental: {
       scrollRestoration: true,
+    },
+    images: {
+      domains: ['www.researchgate.net', 'a.media-amazon.com'],
     },
   }
 

@@ -13,9 +13,7 @@ export const getStaticProps = (async () => {
   return { props: { source: posts } }
 }) satisfies GetStaticProps<PageProps>
 
-export default function Page(props: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { source } = props
-  // @ts-expect-error
-  // return <HomeScreen source={source} />
+
+export default function Page() {
   return <NewScreen />
 }

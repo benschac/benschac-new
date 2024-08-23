@@ -40,7 +40,7 @@ const Blockquote = styled(YStack, {
   borderWidth: '$1',
   borderStyle: 'dotted',
   $sm: {
-    px: '$2',
+    px: '$4',
   },
 })
 
@@ -59,7 +59,7 @@ const InlineCodeBlock = styled(Paragraph, {
 const components = {
   Image: (props: unknown) => (
     // @ts-expect-error - Image jsx issue, will look into this later
-    <Image maxWidth="100%" objectFit="cover" {...props} />
+    <Image mt="$4" bg="red" maxWidth="100%" objectFit="cover" {...props} />
   ),
   h1: H1,
   h2: (props) => (
@@ -84,7 +84,7 @@ const components = {
   h3: (props) => (
     <H3
       fontStyle="normal"
-      fontSize="$7"
+      fontSize="$8"
       fontWeight="400"
       lineHeight="1.56"
       letterSpacing="-0.54px"
@@ -170,7 +170,6 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
         }}
         jc="center"
         ai="center"
-        // mih="25vh"
       >
         <H1
           ta="center"
@@ -211,7 +210,7 @@ export function PostScreen(props: { source: MDXRemoteSerializeResult }) {
             shadowRadius="$3"
             py="$10"
             $sm={{
-              px: '$2',
+              px: '$4',
             }}
             px="$10"
             f={1}

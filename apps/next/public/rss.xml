@@ -9,10 +9,17 @@
             <link>http://localhost:3000</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 19 Aug 2024 23:31:12 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Aug 2024 18:13:05 GMT</lastBuildDate>
         <atom:link href="http://localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 19 Aug 2024 23:31:12 GMT</pubDate>
+        <pubDate>Fri, 23 Aug 2024 18:13:05 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2024]]></copyright>
+        <item>
+            <title><![CDATA[Animated SVG Blog background]]></title>
+            <description><![CDATA[How the Interactive Background Works]]></description>
+            <link>http://localhost:3000/blog/animated-blog-post-background</link>
+            <guid isPermaLink="true">http://localhost:3000/blog/animated-blog-post-background</guid>
+            <pubDate>Fri, 23 Aug 2024 16:52:45 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[How to Configure and Package Fonts with Tamagui and Next.js]]></title>
             <description><![CDATA[Documenting my journey for both my future self and others who might run into the same problem.]]></description>
