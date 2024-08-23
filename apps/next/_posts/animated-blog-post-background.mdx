@@ -1,5 +1,5 @@
 ---
-title: Animating SVGs with a little bit of Math
+title: Animating SVGs with A Little Bit of Math
 slug: animated-blog-post-background
 description: >-
   How the Interactive Background Works
@@ -14,7 +14,7 @@ author: 'Benjamin Schachter'
 
 ## Introduction
 
-I recently purchased [nature of code](https://natureofcode.com/) and wanted to recreated the cover pattern with a ripple effect animation that responds on mouse hover.
+I recently purchased [Nature of Code](https://natureofcode.com/) and wanted to recreate the cover pattern with a ripple effect animation that responds to mouse hover.
 
 > This is the background of all posts on this blog. If you hover over the background, you'll see the lines animate toward the mouse.
 
@@ -33,11 +33,11 @@ I recently purchased [nature of code](https://natureofcode.com/) and wanted to r
 
 Additionally, all of the code is open source, if jumping to the code implementation is more your style.
 
-The more interesting part of the animation is the rotation calculation and the smooth animation of the svg lines.
+The more interesting part of the animation is the rotation calculation and the smooth animation of the SVG lines.
 
 ## Setting Up the Canvas
 
-The animation is on an SVG canvas that fills the entire width of the container and 70% of the viewport height, and is absolutely positioned to the top of the page
+The animation is on an SVG canvas that fills the entire width of the container and 70% of the viewport height, and is absolutely positioned at the top of the page.
 
 ```tsx
 <svg
@@ -72,7 +72,7 @@ interface Line {
 }
 ```
 
-## Interaction and a little bit of math
+## Interaction and a Little Bit of Math
 
 The interactivity lies in the rotation calculation during mouse hover. When the mouse moves, the component calculates the angle between each line and the mouse position.
 
@@ -82,20 +82,19 @@ Distance between two points is calculated using the [Euclidean distance formula]
 
 <Spacer size="$4" />
 <img
-
-style={{
+  style={{
     width: '100%',
     height: '100%',
     objectFit: 'cover',
     alignSelf: 'center',
   }}
-alt="Euclidean distance formula"
-src="https://www.researchgate.net/profile/Young-Sun-Lee-2/publication/263889770/figure/fig1/AS:890653479284740@1589359745492/An-example-of-Euclidean-distance-between-two-objects-on-variables-X-and-Y.png"
+  alt="Euclidean distance formula"
+  src="https://www.researchgate.net/profile/Young-Sun-Lee-2/publication/263889770/figure/fig1/AS:890653479284740@1589359745492/An-example-of-Euclidean-distance-between-two-objects-on-variables-X-and-Y.png"
 />
 
-Also known as the pythagorean distance.
+This is also known as the Pythagorean distance.
 
-next, we calculate the distance between the mouse and the line.
+Next, we calculate the distance between the mouse and the line.
 
 ```ts
 // Calculate the distance between the mouse and the x position of the line
@@ -107,7 +106,7 @@ const dy = mousePos.y - line.y
 const distance = Math.sqrt(dx * dx + dy * dy)
 const maxDistance = 10 // Max distance of effect
 
-// if the distance between the mouse and the line is less than the max distance, and the mouse is not at the edge of the screen, then we calculate the angle between the mouse and the line
+// If the distance between the mouse and the line is less than the max distance, and the mouse is not at the edge of the screen, then we calculate the angle between the mouse and the line
 if (distance < maxDistance && mousePos.x !== -1 && mousePos.y !== -1) {
   // Calculate the angle between the mouse and the line
   // atan2(dy, dx) returns the angle in radians between the positive x-axis and the point (dy, dx)
@@ -116,13 +115,13 @@ if (distance < maxDistance && mousePos.x !== -1 && mousePos.y !== -1) {
 }
 ```
 
-using the [`atan2`](https://en.wikipedia.org/wiki/Atan2) function, which returns the angle in radians between the positive x-axis and the point given by the coordinates (dy, dx). We specifically use `Math.atan2(dy, dx)` to get the angle between the mouse and the line on a cartesian plane to generate the new rotation of the line.
+Using the [`atan2`](https://en.wikipedia.org/wiki/Atan2) function, which returns the angle in radians between the positive x-axis and the point given by the coordinates (dy, dx), we specifically use `Math.atan2(dy, dx)` to get the angle between the mouse and the line on a Cartesian plane to generate the new rotation of the line.
 
-Then, we convert radians to degrees for easier manipulation multipling `(180 / Math.PI)`.
+Then, we convert radians to degrees for easier manipulation by multiplying by `(180 / Math.PI)`.
 
 ### Smooth Animation
 
-To create a smooth animation, the component doesn't immediately set the line to its target rotation, but gradually moves towards it
+To create a smooth animation, the component doesn't immediately set the line to its target rotation, but gradually moves towards it.
 
 ```ts
 const rotationDiff = newTargetRotation - line.rotation
@@ -154,7 +153,7 @@ function debounce(func: Function, wait: number) {
  * @returns debouncedFn
  */
 function useDebounce(callback: Function, delay: number) {
-  // make sure the debounce function is only created once
+  // Make sure the debounce function is only created once
   // and not recreated on every render
   const debouncedFn = useRef(debounce(callback, delay)).current
   return debouncedFn
