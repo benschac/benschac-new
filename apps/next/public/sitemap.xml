@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.bensch.ac/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.bensch.ac/animated-blog-post-background</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://www.bensch.ac/fixing-react-native-universal-fs-node-module</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://www.bensch.ac/how-i-got-my-first-developer-job</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://www.bensch.ac/how-to-configure-and-package-fonts-with-tamagui</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://www.bensch.ac/return-statement</loc>
+  </url>
+
+  <url>
+    <loc>https://www.bensch.ac/self-positioning-react-components</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://www.bensch.ac/what-i-learned-9-months-into-my-first-programming-job</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://www.bensch.ac/what-i-learned-fixing-one-line-of-css-in-svelte</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://www.bensch.ac/what-i-learned-from-failure</loc>
+  </url>
+</urlset>
