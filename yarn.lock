@@ -6242,15 +6242,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.14.1":
-  version: 20.14.15
-  resolution: "@types/node@npm:20.14.15"
-  dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10/87a4a4313e886c1db1c8042004956095477e040f67df993fd16a2d50488c750bda81e85bf702c2e629e964605034e8dfe0cb91b65ce22b6b8eec37ece61c6b6c
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:^22.5.1":
   version: 22.5.1
   resolution: "@types/node@npm:22.5.1"
@@ -15084,7 +15075,7 @@ __metadata:
     rss: "npm:^1.2.2"
     tamagui: "npm:^1.110.0"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.5.4"
+    typescript: "npm:~5.3.3"
     vercel: "npm:latest"
   languageName: unknown
   linkType: soft
@@ -15813,7 +15804,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "p5-react-native@workspace:packages/p5-react-native"
   dependencies:
-    "@types/node": "npm:^20.14.1"
+    "@types/node": "npm:^22.5.1"
     "@types/p5": "npm:^1.7.6"
     "@types/react": "npm:^18.3.3"
     expo-gl: "npm:^14.0.2"
@@ -19511,7 +19502,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.0.4, typescript@npm:^5.5.4":
+"typescript@npm:^5.0.4":
   version: 5.5.4
   resolution: "typescript@npm:5.5.4"
   bin:
@@ -19541,7 +19532,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.0.4#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.5.4#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.0.4#optional!builtin<compat/typescript>":
   version: 5.5.4
   resolution: "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=d69c25"
   bin:

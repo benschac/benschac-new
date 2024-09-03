@@ -1,26 +1,6 @@
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import {
-  Anchor,
-  Button,
-  H1,
-  Layout,
-  Paragraph,
-  Separator,
-  Sheet,
-  useToastController,
-  XStack,
-  YStack,
-  H2,
-  H3,
-  Image,
-  Text,
-  Spacer,
-  H5,
-  Theme,
-} from '@my/ui'
+import { H1, Layout, Paragraph, Separator, XStack, YStack, Spacer, H5, Theme } from '@my/ui'
 import { useLink } from 'solito/navigation'
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import React from 'react'
 
 export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
@@ -30,6 +10,7 @@ export function HomeScreen(props: { source: MDXRemoteSerializeResult }) {
       <YStack f={1} gap="$8" p="$4">
         {/* @ts-expect-error: TODO: need to look into how mdx remote gets this type */}
         {source.map((post, idx) => {
+          if (post.source.frontmatter.draft) return null
           const blogLink = useLink({
             href: `/blog/${source[idx].source.frontmatter.slug}`,
           })

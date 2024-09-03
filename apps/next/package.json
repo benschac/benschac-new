@@ -39,7 +39,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^10.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+    "typescript": "~5.3.3"
   },
   "packageManager": "yarn@3.5.1"
 }
