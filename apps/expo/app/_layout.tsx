@@ -5,58 +5,48 @@ import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { Provider } from 'app/provider'
 import { NativeToast } from '@my/ui/src/NativeToast'
-import { SafeArea } from 'app/provider/safe-area'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { useTheme } from '@my/ui'
+import { usePersistNavigationState } from 'app/hooks/persist-expo-router-state.native'
 
 export const unstable_settings = {
-  // Ensure that reloading on `/user` keeps a back button present.
-  initialRouteName: 'Home',
+  initialRouteName: 'index',
 }
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
 
-export default function App() {
-  const [interLoaded, interError] = useFonts({
+export default function RootLayout() {
+  const [loaded, error] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
     InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
   })
 
   useEffect(() => {
-    if (interLoaded || interError) {
-      // Hide the splash screen after the fonts have loaded (or an error was returned) and the UI is ready.
+    if (loaded && !error) {
       SplashScreen.hideAsync()
     }
-  }, [interLoaded, interError])
+  }, [loaded, error])
 
-  if (!interLoaded && !interError) {
+  if (!loaded && !error) {
     return null
   }
 
-  return <RootLayoutNav />
-}
-
-function RootLayoutNav() {
-  const colorScheme = useColorScheme()
-
   return (
     <Provider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <SafeAreaProvider>
-          <Stack />
-          <NativeToast />
-        </SafeAreaProvider>
-      </ThemeProvider>
+      <RootLayoutNav />
     </Provider>
   )
 }
 
-function SafeAreaProvider({ children }: { children: React.ReactNode }) {
-  const theme = useTheme()
+function RootLayoutNav() {
+  const colorScheme = useColorScheme()
+  const initialState = usePersistNavigationState()
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: theme.background.val }}>
-      {children}
-    </SafeAreaView>
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Stack
+        initialRouteName={__DEV__ && initialState ? undefined : 'index'}
+        screenOptions={{ headerShown: false }}
+      />
+      <NativeToast />
+    </ThemeProvider>
   )
 }

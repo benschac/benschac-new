@@ -2311,6 +2311,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gorhom/bottom-sheet@npm:^4":
+  version: 4.6.4
+  resolution: "@gorhom/bottom-sheet@npm:4.6.4"
+  dependencies:
+    "@gorhom/portal": "npm:1.0.14"
+    invariant: "npm:^2.2.4"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-native": "*"
+    react: "*"
+    react-native: "*"
+    react-native-gesture-handler: ">=1.10.1"
+    react-native-reanimated: ">=2.2.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-native":
+      optional: true
+  checksum: 10/a437c5490c13c69100a7b605039a51064847b82202a985ec09acd7c6e6c39e735380c5e612b212c6466d95e3e3817e3ef50f54d18d489fcb2f1294370b4b5616
+  languageName: node
+  linkType: hard
+
+"@gorhom/portal@npm:1.0.14":
+  version: 1.0.14
+  resolution: "@gorhom/portal@npm:1.0.14"
+  dependencies:
+    nanoid: "npm:^3.3.1"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10/e0fa06be88b850cccdc6a1417a86e5ac21d82e3bfd1cec7eb05eccf7f3b595babe305541f278fdcbde34f3a9db465097dca2c785445c28bafb83b744e235da0c
+  languageName: node
+  linkType: hard
+
 "@graphql-typed-document-node/core@npm:^3.1.0":
   version: 3.2.0
   resolution: "@graphql-typed-document-node/core@npm:3.2.0"
@@ -2934,6 +2968,17 @@ __metadata:
   peerDependencies:
     react: ^16.8 || ^17.0 || ^18.0
   checksum: 10/b00fc6ec54a20785263540d9e4a0e3a13d9bc54d7af49b64f6a268eba4a6560c291bd95bbaa7cf7609fdf6fd0ebae54605bb01313de3fa180b06f2a321e9a3b4
+  languageName: node
+  linkType: hard
+
+"@react-native-async-storage/async-storage@npm:1.23.1":
+  version: 1.23.1
+  resolution: "@react-native-async-storage/async-storage@npm:1.23.1"
+  dependencies:
+    merge-options: "npm:^3.0.4"
+  peerDependencies:
+    react-native: ^0.0.0-0 || >=0.60 <1.0
+  checksum: 10/9d0acc7edb0ba9ee414d6e62c656e5d571c9d9615e7e9f4748865b965178998f2e73786b8050387ada00ddb6faaca97b5cf2e010ceaeebe91571991364a0f515
   languageName: node
   linkType: hard
 
@@ -7031,6 +7076,7 @@ __metadata:
   resolution: "app@workspace:packages/app"
   dependencies:
     "@my/ui": "npm:0.0.1"
+    "@react-native-async-storage/async-storage": "npm:1.23.1"
     "@react-navigation/native": "npm:^6.1.17"
     "@tamagui/animations-react-native": "npm:^1.110.0"
     "@tamagui/colors": "npm:^1.110.0"
@@ -7540,7 +7586,6 @@ __metadata:
     eslint: "npm:^9.3.0"
     node-gyp: "npm:^10.1.0"
     prettier: "npm:^3.2.5"
-    react-native-reanimated: "npm:~3.15.0"
     turbo: "npm:^1.13.3"
     typescript: "npm:~5.3.3"
   languageName: unknown
@@ -10429,7 +10474,9 @@ __metadata:
     "@babel/runtime": "npm:^7.24.6"
     "@expo/config-plugins": "npm:~8.0.4"
     "@expo/metro-config": "npm:~0.18.4"
+    "@gorhom/bottom-sheet": "npm:^4"
     "@my/ui": "npm:0.0.1"
+    "@react-native-async-storage/async-storage": "npm:1.23.1"
     "@shopify/react-native-skia": "npm:1.2.3"
     "@tamagui/babel-plugin": "npm:^1.110.0"
     app: "npm:0.0.0"
@@ -10443,6 +10490,7 @@ __metadata:
     expo-font: "npm:~12.0.6"
     expo-haptics: "npm:~13.0.1"
     expo-image: "npm:~1.12.15"
+    expo-image-picker: "npm:~15.0.7"
     expo-linear-gradient: "npm:~13.0.2"
     expo-linking: "npm:~6.3.1"
     expo-location: "npm:~17.0.1"
@@ -10465,7 +10513,9 @@ __metadata:
     react-native-safe-area-context: "npm:4.10.5"
     react-native-screens: "npm:~3.34.0"
     react-native-svg: "npm:15.2.0"
+    react-native-vision-camera: "npm:^4.5.2"
     react-native-web: "npm:~0.19.12"
+    ts-pattern: "npm:^5.3.1"
     typescript: "npm:~5.3.3"
   languageName: unknown
   linkType: soft
@@ -10611,6 +10661,26 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: 10/2ed8d292f89208b21fece50c2d21c4272833fd37cb769e382365a9502b844c33f582ceee374ad8d3c184cc75418ca9a6daf54005de281c0a952c7f2a39b026c9
+  languageName: node
+  linkType: hard
+
+"expo-image-loader@npm:~4.7.0":
+  version: 4.7.0
+  resolution: "expo-image-loader@npm:4.7.0"
+  peerDependencies:
+    expo: "*"
+  checksum: 10/dbd87fdbf3e50b8c459e5ea985bfd20d77462229e46edefbd62b68e1676416f8608c16cf09103c2fef1bd84ecf55a1fd48f38e1954a2dd535e6f9beef04785bb
+  languageName: node
+  linkType: hard
+
+"expo-image-picker@npm:~15.0.7":
+  version: 15.0.7
+  resolution: "expo-image-picker@npm:15.0.7"
+  dependencies:
+    expo-image-loader: "npm:~4.7.0"
+  peerDependencies:
+    expo: "*"
+  checksum: 10/6ebd8638ce41c13f63c51494d4c95a991eac31ef6625dc8c4fffa4ce4ccda3fa1bc0b4b3528995262435ddfa76080752ac7f6762c62c1122d7933a4ad85629f6
   languageName: node
   linkType: hard
 
@@ -12730,6 +12800,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-plain-obj@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "is-plain-obj@npm:2.1.0"
+  checksum: 10/cec9100678b0a9fe0248a81743041ed990c2d4c99f893d935545cfbc42876cbe86d207f3b895700c690ad2fa520e568c44afc1605044b535a7820c1d40e38daa
+  languageName: node
+  linkType: hard
+
 "is-plain-obj@npm:^4.0.0":
   version: 4.1.0
   resolution: "is-plain-obj@npm:4.1.0"
@@ -14039,6 +14116,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"merge-options@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "merge-options@npm:3.0.4"
+  dependencies:
+    is-plain-obj: "npm:^2.1.0"
+  checksum: 10/d86ddb3dd6e85d558dbf25dc944f3527b6bacb944db3fdda6e84a3f59c4e4b85231095f58b835758b9a57708342dee0f8de0dffa352974a48221487fe9f4584f
+  languageName: node
+  linkType: hard
+
 "merge-stream@npm:^2.0.0":
   version: 2.0.0
   resolution: "merge-stream@npm:2.0.0"
@@ -15008,7 +15094,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.1.23, nanoid@npm:^3.3.6, nanoid@npm:^3.3.7":
+"nanoid@npm:^3.1.23, nanoid@npm:^3.3.1, nanoid@npm:^3.3.6, nanoid@npm:^3.3.7":
   version: 3.3.7
   resolution: "nanoid@npm:3.3.7"
   bin:
@@ -16800,6 +16886,26 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10/5042e1377b9d66679898ce812760691d01602efac27a32eed0914b518652c66d575dc7eb1493d3315a7db043d4974796d9107fe17f4b331b6bbbff16906016e9
+  languageName: node
+  linkType: hard
+
+"react-native-vision-camera@npm:^4.5.2":
+  version: 4.5.2
+  resolution: "react-native-vision-camera@npm:4.5.2"
+  peerDependencies:
+    "@shopify/react-native-skia": "*"
+    react: "*"
+    react-native: "*"
+    react-native-reanimated: "*"
+    react-native-worklets-core: "*"
+  peerDependenciesMeta:
+    "@shopify/react-native-skia":
+      optional: true
+    react-native-reanimated:
+      optional: true
+    react-native-worklets-core:
+      optional: true
+  checksum: 10/2c2653ef0f6d6716a9782308a9c50111878a143f6005065d4090596f7d9524ac29949c1fd93769dd5859a8ab0dd508ee453d877fb67ced92c5e9e68370864132
   languageName: node
   linkType: hard
 
@@ -19201,6 +19307,13 @@ __metadata:
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
   checksum: 10/a91a15b3c9f76ac462f006fa88b6bfa528130dcfb849dd7ef7f9d640832ab681e235b8a2bc58ecde42f72851cc1d5d4e22c901b0c11aa51001ea1d395074b794
+  languageName: node
+  linkType: hard
+
+"ts-pattern@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "ts-pattern@npm:5.3.1"
+  checksum: 10/e20be66468abb92617d909146737c7d96a4eda55c0e6ef38fece2a266a6242805daabe98adc57c6081593a11cb970b0f026fee086e337c20d145962465c74e4c
   languageName: node
   linkType: hard
 

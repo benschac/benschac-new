@@ -15,9 +15,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "ac.bensch.app",
@@ -48,6 +46,26 @@
     },
     "plugins": [
       [
+        "expo-secure-store",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to access your Face ID biometric data."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(benschac) needs access to your Camera.",
+          "enableMicrophonePermission": true,
+          "microphonePermissionText": "$(benschac) needs access to your Microphone."
+        }
+      ],
+      [
         "expo-build-properties",
         {
           "ios": {
@@ -67,7 +85,8 @@
       "expo-router",
       "expo-font",
       "expo-video",
-      "expo-secure-store"
+      "expo-secure-store",
+      "react-native-vision-camera"
     ],
     "experiments": {
       "typedRoutes": true
