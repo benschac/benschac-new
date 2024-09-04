@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, NavigationState } from '@react-navigation/native'
 import { useCallback, useState, useEffect } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
@@ -30,7 +30,7 @@ const PERSISTENCE_KEY = 'NAVIGATION_STATE_V1'
  * return <Stack initialRouteName={initialState || 'index'} />
  */
 export function usePersistNavigationState() {
-  const [initialState, setInitialState] = useState<any>(null)
+  const [initialState, setInitialState] = useState<NavigationState>()
   const navigation = useNavigation()
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export function usePersistNavigationState() {
     }
   }, [navigation])
 
-  const debouncedSaveState = useDebounce(async (state: any) => {
+  const debouncedSaveState = useDebounce(async (state: NavigationState) => {
     if (__DEV__) {
       try {
         await AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))
@@ -68,7 +68,9 @@ export function usePersistNavigationState() {
     if (__DEV__) {
       const saveState = () => {
         const state = navigation.getState()
-        debouncedSaveState(state)
+        if (state) {
+          debouncedSaveState(state)
+        }
       }
 
       const unsubscribe = navigation.addListener('state', saveState)
