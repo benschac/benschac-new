@@ -86,7 +86,15 @@
       "expo-font",
       "expo-video",
       "expo-secure-store",
-      "react-native-vision-camera"
+      "react-native-vision-camera",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "react-native",
+          "organization": "benschac"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
