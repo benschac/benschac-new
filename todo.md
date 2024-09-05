@@ -6,4 +6,7 @@
 # P5 react native
 
 - should probably use this, instead of processing-js polyfill: https://github.com/expo/browser-polyfill
--
+
+# Sentry
+
+- export symbols
