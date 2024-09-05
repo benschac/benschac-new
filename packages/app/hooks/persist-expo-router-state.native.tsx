@@ -44,7 +44,9 @@ export function usePersistNavigationState() {
             navigation.reset(state)
           }
         } catch (e) {
-          console.warn('Failed to restore navigation state:', e)
+          if (e instanceof Error) {
+            console.warn('Failed to restore navigation state:', e.message)
+          }
         }
       }
 
