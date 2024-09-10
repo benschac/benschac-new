@@ -13,6 +13,7 @@
     "@next/mdx": "^14.2.5",
     "@next/third-parties": "^14.2.5",
     "@prisma/client": "^5.19.0",
+    "@react-three/drei": "^9.112.0",
     "@react-three/fiber": "^8.17.7",
     "@tamagui-google-fonts/source-serif-4": "workspace:^",
     "@tamagui/config": "^1.110.0",
