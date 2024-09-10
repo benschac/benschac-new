@@ -1,4 +1,17 @@
-import { H1, Image, Layout, XStack, YStack, styled, Circle, Spacer, Paragraph, H3 } from '@my/ui'
+import {
+  H1,
+  Image,
+  Layout,
+  XStack,
+  YStack,
+  styled,
+  Circle,
+  Spacer,
+  Paragraph,
+  H3,
+  Theme,
+  H5,
+} from '@my/ui'
 
 import { Twitter, NotepadText, Linkedin, Github, Rss, Space, X, Pen } from '@tamagui/lucide-icons'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
@@ -127,6 +140,20 @@ export function NewScreen() {
             <Paragraph fontWeight="300" lineHeight="$1" ta="center">
               I am currently looking for my next role.
             </Paragraph>
+            <Spacer flex />
+            <YStack w="100%" gap="$4">
+              {__DEV__ && (
+                <XStack
+                  onPress={() => router.push('/notes')}
+                  jc="center"
+                  py="$4"
+                  br="$2"
+                  bg="$background"
+                >
+                  <H3 ta="center">Notes</H3>
+                </XStack>
+              )}
+            </YStack>
           </Aside>
           <Spacer size="$4" />
           <Main>
