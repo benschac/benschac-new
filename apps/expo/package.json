@@ -34,6 +34,7 @@
     "@react-native-async-storage/async-storage": "1.23.1",
     "@sentry/react-native": "^5.31.1",
     "@shopify/react-native-skia": "1.2.3",
+    "@tamagui/animations-moti": "^1.112.0",
     "app": "0.0.0",
     "babel-plugin-module-resolver": "^5.0.2",
     "burnt": "^0.12.2",

@@ -1,5 +1,4 @@
-import { createTamagui } from 'tamagui'
-import { createInterFont } from '@tamagui/font-inter'
+import { createTamagui, setupDev } from 'tamagui'
 import { shorthands } from '@tamagui/shorthands'
 import { tokens, themes } from '@tamagui/config/v3'
 import { createMedia } from '@tamagui/react-native-media-driver'
@@ -183,7 +182,9 @@ const monoFont = createMonoFont(
     sizeLineHeight: (size) => Math.round(size * 1.1 + (size > 20 ? 10 : 10)),
   }
 )
-
+setupDev({
+  visualizer: true,
+})
 export const config = createTamagui({
   defaultFont: 'body',
   animations,

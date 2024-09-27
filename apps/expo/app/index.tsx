@@ -1,65 +1,30 @@
-import React, { useCallback, useRef } from 'react'
-import { Home, ChevronRight, Camera } from '@tamagui/lucide-icons'
+/**
+ * Feature: make list items toggle: compact, large, default
+ *
+ * - animate the transition
+ * - use variants and static properties to define the list item size changes
+ * - [x] use a button group to toggle the size
+ *
+ */
+import React, { useState } from 'react'
 import {
-  YStack,
-  Paragraph,
-  withStaticProperties,
-  H3,
-  createStyledContext,
-  Button,
-  Theme,
-  getTokens,
-  XStack,
-  Spacer,
-  useTheme,
-} from '@my/ui'
+  Home,
+  Leaf,
+  Camera,
+  Settings as SettingsIcon,
+  Move,
+  Code2,
+  Image,
+} from '@tamagui/lucide-icons'
+import { XStack, useTheme, ScrollView, Group, Spacer, AnimatePresence } from '@my/ui'
+import { Settings } from '@my/ui/src/Settings.native'
 import { useRouter } from 'solito/router'
 import { Stack } from 'expo-router'
-import { FlatList, View } from 'react-native'
-import { styled } from '@my/ui'
-import { isValidElement, useContext } from 'react'
-import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 import { SafeAreaView, SafeAreaViewProps } from 'react-native-safe-area-context'
+import { Button } from 'tamagui'
 
-const ItemFrame = styled(XStack, {
-  px: '$4',
-  py: '$4',
-  ai: 'center',
-  borderRadius: '$8',
-  bg: '$background',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.25,
-  shadowRadius: 3.84,
-  elevation: 5,
-})
+const sizes = ['$4', '$5', '$6'] as const
 
-const ItemContext = createStyledContext({
-  icon: null,
-  size: '$4',
-})
-const ItemTitle = styled(H3, {
-  fontWeight: 'bold',
-})
-const ItemSubTitle = styled(Paragraph, {})
-
-const ItemIcon = (props: { children: React.ReactNode }) => {
-  const { icon, size } = useContext(ItemContext.context)
-  const tokens = getTokens()
-  return isValidElement(props.children) ? React.cloneElement(props.children, {}) : null
-}
-
-const ItemIconRight = (props: { children: React.ReactNode }) => {
-  const { icon, size } = useContext(ItemContext.context)
-  const tokens = getTokens()
-  return isValidElement(props.children) ? React.cloneElement(props.children, {}) : null
-}
-
-const Item = withStaticProperties(ItemFrame, {
-  Title: ItemTitle,
-  SubTitle: ItemSubTitle,
-  Icon: ItemIcon,
-  IconRight: ItemIconRight,
-})
 export function SafeArea({
   children,
   ...props
@@ -71,90 +36,125 @@ export function SafeArea({
     </SafeAreaView>
   )
 }
+type CustomSizes = 'sm' | 'md' | 'lg'
+
+const groupOne = [
+  {
+    title: 'NFT meme Camera',
+    subTitle: 'Snap a photo and mint an NFT',
+    route: '/memes',
+    color: 'blue',
+    icon: Camera,
+  },
+  {
+    title: 'Drawing With Skia',
+    subTitle: 'Nature of Code Renders',
+    route: '/nature-of-code',
+    color: 'green',
+    icon: Leaf,
+  },
+  {
+    title: 'Reanimated Fun',
+    subTitle: 'Experiments with reanimated',
+    route: '/reanimated-experiments',
+    color: 'orange',
+    icon: Move,
+  },
+  {
+    title: 'Native Modules',
+    subTitle: 'Experiments with native modules',
+    route: '/native-modules',
+    color: 'red',
+    icon: Code2,
+  },
+  {
+    title: 'Layout Effects',
+    subTitle: 'Experiments with reaminated layout',
+    route: '/reanimated-layouts',
+    color: 'purple',
+    icon: Home,
+  },
+  {
+    title: 'Settings',
+    subTitle: 'Change your settings',
+    route: '/settings',
+    color: 'yellow',
+    icon: SettingsIcon,
+  },
+  {
+    title: 'SVG Converter',
+    subTitle: 'Convert to SVG',
+    route: '/svg-converter',
+    color: 'pink',
+    icon: Image,
+  },
+] as const
 
 export default function IndexPage() {
   const router = useRouter()
-  const metaData = [
-    {
-      title: 'NFT Camera',
-      subTitle: 'This is a test',
-      onPress: () => {
-        router.push('/mint')
-      },
-      icon: <Camera />,
-    },
-    {
-      title: 'Hello, world!',
-      subTitle: 'This is a test',
-      onPress: () => {},
-      icon: <Home />,
-    },
-    {
-      title: 'Hello, world!',
-      subTitle: 'This is a test',
-      onPress: () => {},
-      icon: <Home />,
-    },
-  ]
-  // ref for the bottom sheet modal
-  const bottomSheetModalRef = useRef<BottomSheetModal>(null)
 
-  // variables
-  const snapPoints = ['25%', '50%']
-
-  // callbacks
-  const handlePresentModalPress = useCallback(() => {
-    bottomSheetModalRef.current?.present()
-  }, [])
+  const [size, setSize] = useState<'sm' | 'md' | 'lg'>('md')
+  const [color, setColor] = useState<'active' | 'alt1' | 'alt2'>('alt1')
 
   return (
     <>
       <Stack.Screen
         options={{
           headerShown: false,
+          headerBackTitleVisible: false,
         }}
       />
       <SafeArea>
-        {/* <BottomSheetModalProvider> */}
-        <YStack bg="$background" f={1}>
-          <Button
-            onPress={() => {
-              throw new Error('Test Sentry Error')
-            }}
-          >
-            Test Sentry Error
-          </Button>
-          <FlatList
-            data={metaData}
-            indicatorStyle="black"
-            ItemSeparatorComponent={() => <Spacer size="$4" />}
-            renderItem={({ item }) => (
-              <Item mx="$4" onPress={item.onPress}>
-                <Item.Icon>{item.icon}</Item.Icon>
-                <Spacer size="$4" />
-                <Item.Title>{item.title}</Item.Title>
-                <Spacer flex />
-                <Item.IconRight>
-                  <ChevronRight />
-                </Item.IconRight>
-              </Item>
-            )}
-            ListHeaderComponent={
-              <Button onPress={handlePresentModalPress}>Open Bottom Sheet</Button>
-            }
-          />
-          {/* <BottomSheetModal ref={bottomSheetModalRef} index={1} snapPoints={snapPoints}>
-              <Theme name="red">
-                <Theme name="active">
-                  <YStack f={1} ai="center" jc="center" bg="$background">
-                    <H3>Bottom Sheet Content</H3>
-                    <Paragraph>This is the content of the bottom sheet modal.</Paragraph>
-                  </YStack>
-                </Theme>
-              </Theme>
-            </BottomSheetModal> */}
-        </YStack>
-        {/* </BottomSheetModalProvider> */}
+        <Spacer />
+        <ScrollView>
+          <Settings>
+            <Settings.Props size={size} color={color}>
+              <Settings.Group>
+                {groupOne.map((item, idx) => {
+                  return (
+                    <Settings.Item
+                      key={item.title}
+                      onPress={() => router.push(item.route)}
+                      iconAccentColor={item.color}
+                      icon={<item.icon />} // Pass the icon as a ReactElement
+                    >
+                      {item.title}
+                    </Settings.Item>
+                  )
+                })}
+              </Settings.Group>
+            </Settings.Props>
+          </Settings>
+          <Spacer />
+          <XStack jc="center" ai="center">
+            <Group f={1} jc="center" ai="center" elevate orientation="horizontal">
+              <Group.Item>
+                <Button onPress={() => setSize('sm')}>compact</Button>
+              </Group.Item>
+              <Group.Item>
+                <Button onPress={() => setSize('md')}>default</Button>
+              </Group.Item>
+              <Group.Item>
+                <Button onPress={() => setSize('lg')}>spacious</Button>
+              </Group.Item>
+            </Group>
+          </XStack>
+          <Spacer />
+          <Spacer />
+          <XStack jc="center" ai="center">
+            <Group f={1} jc="center" ai="center" elevate orientation="horizontal">
+              <Group.Item>
+                <Button onPress={() => setColor('alt1')}>alt1</Button>
+              </Group.Item>
+              <Group.Item>
+                <Button onPress={() => setColor('alt2')}>alt2</Button>
+              </Group.Item>
+              <Group.Item>
+                <Button onPress={() => setColor('active')}>active</Button>
+              </Group.Item>
+            </Group>
+          </XStack>
+        </ScrollView>
       </SafeArea>
     </>
   )

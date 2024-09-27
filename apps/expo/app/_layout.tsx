@@ -9,6 +9,7 @@ import { usePersistNavigationState } from 'app/hooks/persist-expo-router-state.n
 import { useSentryInit } from 'app/hooks/useSentryInit.native'
 import ErrorBoundary from '../components/ErrorBoundary'
 import * as Sentry from '@sentry/react-native'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 Sentry.init({
   dsn: 'https://62737aa119098c67e0ae7ae2c1db6ea1@o4507895126294528.ingest.us.sentry.io/4507895138025472',
@@ -46,9 +47,11 @@ function RootLayout() {
 
   return (
     <ErrorBoundary>
-      <Provider>
-        <RootLayoutNav />
-      </Provider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <Provider>
+          <RootLayoutNav />
+        </Provider>
+      </GestureHandlerRootView>
     </ErrorBoundary>
   )
 }
@@ -62,7 +65,10 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack
         initialRouteName={__DEV__ && initialState ? undefined : 'index'}
-        screenOptions={{ headerShown: false }}
+        screenOptions={{
+          headerShown: true,
+          headerShadowVisible: false,
+        }}
       />
       <NativeToast />
     </ThemeProvider>

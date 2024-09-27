@@ -105,6 +105,7 @@ export const ColorfulSVGPattern = (): JSX.Element => {
           let newTargetRotation = line.targetRotation
 
           if (distance < maxDistance && mousePos.x !== -1 && mousePos.y !== -1) {
+            // https://en.wikipedia.org/wiki/Atan2
             const angle = Math.atan2(dy, dx) * (180 / Math.PI)
             newTargetRotation = angle
           }

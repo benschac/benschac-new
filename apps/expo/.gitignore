@@ -131,3 +131,6 @@ ios/
 android/
 
 .env.local
+.env
+.env.development
+.env.*
