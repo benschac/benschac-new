@@ -1,8 +1,7 @@
-import React from 'react'
 import { Stack } from 'expo-router'
 import { SafeArea } from './index'
-import { Settings } from '@my/ui'
-import { YStack, useTheme } from '@my/ui'
+import { Settings } from '@my/ui/src/Settings.native'
+import { YStack } from '@my/ui'
 import { Moon, Sun, Code2 } from '@tamagui/lucide-icons'
 import { useRootTheme } from 'app/provider/theme/index.native'
 
@@ -24,6 +23,7 @@ export default function SettingsPage() {
           <Settings px="$2">
             <Settings.Group>
               <Settings.Item
+                // @ts-expect-error - icon prop is missing
                 icon={rootTheme === 'light' ? Moon : Sun}
                 onPress={() => {
                   if (typeof setRootTheme === 'function') {
@@ -32,23 +32,23 @@ export default function SettingsPage() {
                 }}
                 iconBackground="active"
                 isActive={false}
-                title="Dark Mode"
                 subTitle="toggle theme"
-              />
+              >
+                Toggle Theme
+              </Settings.Item>
             </Settings.Group>
             <Settings.Group>
               <Settings.Item
+                // @ts-expect-error - icon prop is missing
                 icon={Code2}
-                onPress={() => {
-                  if (typeof setRootTheme === 'function') {
-                    setRootTheme?.(rootTheme === 'light' ? 'dark' : 'light')
-                  }
-                }}
+                onPress={() => {}}
                 iconBackground="active"
                 isActive={false}
                 title="Debug Menu"
                 subTitle="Developer Tools"
-              />
+              >
+                Developer Tools
+              </Settings.Item>
             </Settings.Group>
           </Settings>
         </YStack>

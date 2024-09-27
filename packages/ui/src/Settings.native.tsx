@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IconProps } from '@tamagui/helpers-icon'
-import { useSharedValue, useAnimatedStyle } from 'react-native-reanimated'
 import {
   YStack,
   styled,
@@ -70,12 +69,15 @@ const Title = styled(SizableText, {
     size: {
       sm: {
         fontSize: '$2',
+        h: '$4',
       },
       md: {
         fontSize: '$4',
+        h: '$6',
       },
       lg: {
         fontSize: '$6',
+        h: '$8',
       },
     },
   } as const,
@@ -85,31 +87,25 @@ const ItemFrame = styled(XStack, {
   context: SettingsContext,
   ai: 'center',
   jc: 'center',
-  px: '$4',
-  py: '$3',
   cur: 'pointer',
   gap: '$3',
   br: '$4',
-  animation: 'quick', // Enable animation
-  pressStyle: {
-    scale: 0.3,
-  },
   variants: {
     size: {
       sm: {
-        animation: 'lazy',
-        animatePresence: true,
-        p: '$3',
+        animation: 'bouncy',
+        bg: 'red',
+        h: 50,
       },
       md: {
-        animation: 'lazy',
-        animatePresence: true,
-        p: '$2',
+        animation: 'bouncy',
+        bg: 'blue',
+        h: 100,
       },
       lg: {
-        animation: 'lazy',
-        animatePresence: true,
-        p: '$1',
+        animation: 'bouncy',
+        bg: 'green',
+        h: 200,
       },
     },
   } as const,
@@ -127,20 +123,20 @@ const Item = ({
   onPress: () => void
   iconAccentColor: ThemeName
 }) => {
-  const { size, color } = SettingsContext.useStyledContext()
+  const { size, color } = useContext(SettingsContext.context)
   return (
     <YGroup.Item {...props}>
-      <ItemFrame animation="lazy" size={size} onPress={onPress} {...props}>
+      <ItemFrame animation="bouncy" size={size} onPress={onPress}>
         <Theme name={iconAccentColor}>
           <Theme name={color}>
-            <IconFrame animation="quick" size={size}>
-              {React.cloneElement(Icon, { animation: 'quick', o: 0.9, size: mapSizeToToken(size) })}
+            <IconFrame animation="bouncy" size={size}>
+              {React.cloneElement(Icon, { size: mapSizeToToken(size) })}
             </IconFrame>
-            <Title animation="quick" size={size}>
+            <Title animation="bouncy" size={size}>
               {children}
             </Title>
-            <Spacer flex animation="quick" />
-            <ChevronRight animation="quick" size={mapSizeToToken(size)} />
+            <Spacer flex />
+            <ChevronRight size={mapSizeToToken(size)} />
           </Theme>
         </Theme>
       </ItemFrame>

@@ -23,7 +23,7 @@
     "@tamagui/core": "*"
   },
   "devDependencies": {
-    "@tamagui/build": "^1.110.0",
+    "@tamagui/build": "^1.112.0",
     "subset-font": "^1.6.1"
   }
 }
