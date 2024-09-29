@@ -38,6 +38,7 @@
     "app": "0.0.0",
     "babel-plugin-module-resolver": "^5.0.2",
     "burnt": "^0.12.2",
+    "color": "^4.2.3",
     "expo": "~51.0.31",
     "expo-blur": "~13.0.2",
     "expo-build-properties": "~0.12.5",
@@ -76,6 +77,7 @@
     "@babel/core": "^7.24.6",
     "@expo/metro-config": "~0.18.4",
     "@tamagui/babel-plugin": "^1.112.0",
+    "@types/color": "^3.0.6",
     "metro-minify-terser": "^0.80.9",
     "typescript": "~5.3.3"
   },

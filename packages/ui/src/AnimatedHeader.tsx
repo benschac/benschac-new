@@ -1,5 +1,5 @@
 import React from 'react'
-import { H1, H3, Spacer, Theme, ThemeName, View, XStack, YStack } from '.'
+import { H1, Theme, ThemeName, View, YStack } from 'tamagui'
 
 export function AnimatedHeader({ children }: { children: React.ReactNode }) {
   const [headerHover, setHeaderHover] = React.useState(false)

@@ -68,16 +68,13 @@ const Title = styled(SizableText, {
   variants: {
     size: {
       sm: {
-        fontSize: '$2',
-        h: '$4',
+        fontSize: '$4',
       },
       md: {
-        fontSize: '$4',
-        h: '$6',
+        fontSize: '$6',
       },
       lg: {
-        fontSize: '$6',
-        h: '$8',
+        fontSize: '$8',
       },
     },
   } as const,
@@ -93,19 +90,13 @@ const ItemFrame = styled(XStack, {
   variants: {
     size: {
       sm: {
-        animation: 'bouncy',
-        bg: 'red',
-        h: 50,
+        p: '$2',
       },
       md: {
-        animation: 'bouncy',
-        bg: 'blue',
-        h: 100,
+        p: '$4',
       },
       lg: {
-        animation: 'bouncy',
-        bg: 'green',
-        h: 200,
+        p: '$6',
       },
     },
   } as const,
@@ -126,15 +117,13 @@ const Item = ({
   const { size, color } = useContext(SettingsContext.context)
   return (
     <YGroup.Item {...props}>
-      <ItemFrame animation="bouncy" size={size} onPress={onPress}>
+      <ItemFrame size={size} onPress={onPress}>
         <Theme name={iconAccentColor}>
           <Theme name={color}>
-            <IconFrame animation="bouncy" size={size}>
+            <IconFrame size={size}>
               {React.cloneElement(Icon, { size: mapSizeToToken(size) })}
             </IconFrame>
-            <Title animation="bouncy" size={size}>
-              {children}
-            </Title>
+            <Title size={size}>{children}</Title>
             <Spacer flex />
             <ChevronRight size={mapSizeToToken(size)} />
           </Theme>
@@ -145,8 +134,8 @@ const Item = ({
 }
 
 const Icon = (props: { children: React.ReactElement }) => {
-  const { size: settingsSize, color } = React.useContext(SettingsContext.context)
-  const size = mapSizeToToken(settingsSize)
+  const context = React.useContext(SettingsContext.context)
+  const size = mapSizeToToken(context.size)
   return React.cloneElement(props.children, {
     size: size,
   })

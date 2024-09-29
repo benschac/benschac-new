@@ -23,21 +23,18 @@ export default function SettingsPage() {
           <Settings px="$2">
             <Settings.Group>
               <Settings.Item
-                // @ts-expect-error - icon prop is missing
-                icon={rootTheme === 'light' ? Moon : Sun}
+                iconAccentColor="alt1"
+                icon={rootTheme === 'light' ? <Moon /> : <Sun />}
                 onPress={() => {
                   if (typeof setRootTheme === 'function') {
                     setRootTheme?.(rootTheme === 'light' ? 'dark' : 'light')
                   }
                 }}
-                iconBackground="active"
-                isActive={false}
-                subTitle="toggle theme"
               >
                 Toggle Theme
               </Settings.Item>
             </Settings.Group>
-            <Settings.Group>
+            {/* <Settings.Group>
               <Settings.Item
                 // @ts-expect-error - icon prop is missing
                 icon={Code2}
@@ -49,7 +46,7 @@ export default function SettingsPage() {
               >
                 Developer Tools
               </Settings.Item>
-            </Settings.Group>
+            </Settings.Group> */}
           </Settings>
         </YStack>
       </SafeArea>

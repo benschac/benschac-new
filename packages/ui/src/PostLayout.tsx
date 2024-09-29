@@ -1,4 +1,5 @@
-import { Navigation, YStack } from '.'
+import { Navigation } from '../src/Navigation'
+import { YStack } from 'tamagui'
 import React, { useState, useEffect, useRef } from 'react'
 const isomorphicWindow = typeof window === 'undefined' ? ({} as Window) : window
 

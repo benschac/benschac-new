@@ -1,5 +1,6 @@
 import React from 'react'
-import { H3, Spacer, SwitchThemeButton, Theme, ThemeName, View, XStack, YStack } from '.'
+import { H3, Spacer, Theme, ThemeName, View, XStack, YStack } from 'tamagui'
+import { SwitchThemeButton } from './SwitchThemeButton'
 import { useRouter } from 'solito/router'
 
 export const Navigation = () => {
