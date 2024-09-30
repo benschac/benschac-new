@@ -24,7 +24,8 @@
     "ios": "EXPO_UNSTABLE_CORE_AUTOLINKING=1 npx expo run:ios",
     "eject": "npx expo eject",
     "fix-expo-deps": "npx expo install --check",
-    "xcode": "xed -b ios"
+    "xcode": "xed -b ios",
+    "update:source-maps-sentry": "npx sentry-expo-upload-sourcemaps dist"
   },
   "dependencies": {
     "@babel/runtime": "^7.24.6",

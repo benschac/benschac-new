@@ -13,9 +13,12 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/7ea5034a-5c9b-4b9e-b37e-305471488705"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "ac.bensch.app",
@@ -28,6 +31,10 @@
           "resizeMode": "cover",
           "backgroundColor": "#000000"
         }
+      },
+      "infoPlist": {
+        "NSCameraUsageDescription": "$(benschac) needs access to your Camera.",
+        "NSMicrophoneUsageDescription": "$(benschac) needs access to your Microphone."
       }
     },
     "android": {
@@ -38,7 +45,9 @@
       "package": "com.yourprojectsname.app",
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",
-        "android.permission.ACCESS_FINE_LOCATION"
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA"
       ]
     },
     "web": {
@@ -106,6 +115,9 @@
       "eas": {
         "projectId": "7ea5034a-5c9b-4b9e-b37e-305471488705"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
