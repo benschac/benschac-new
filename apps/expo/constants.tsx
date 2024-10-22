@@ -6,6 +6,7 @@ import {
   Move,
   Code2,
   Image,
+  Wrench,
 } from '@tamagui/lucide-icons'
 
 export const groupOne = [
@@ -52,10 +53,10 @@ export const groupOne = [
     icon: SettingsIcon,
   },
   {
-    title: 'SVG Converter',
+    title: 'Lil Tools',
     subTitle: 'Convert to SVG',
-    route: '/svg-converter',
+    route: '/lil-tools',
     color: 'pink',
-    icon: Image,
+    icon: Wrench,
   },
 ] as const
