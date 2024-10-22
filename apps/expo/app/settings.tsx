@@ -2,7 +2,7 @@ import { Stack } from 'expo-router'
 import { SafeArea } from './index'
 import { Settings } from '@my/ui/src/Settings.native'
 import { YStack } from '@my/ui'
-import { Moon, Sun, Code2 } from '@tamagui/lucide-icons'
+import { Moon, Sun } from '@tamagui/lucide-icons'
 import { useRootTheme } from 'app/provider/theme/index.native'
 
 export default function SettingsPage() {
