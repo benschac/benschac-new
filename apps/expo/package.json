@@ -25,7 +25,8 @@
     "eject": "npx expo eject",
     "fix-expo-deps": "npx expo install --check",
     "xcode": "xed -b ios",
-    "update:source-maps-sentry": "npx sentry-expo-upload-sourcemaps dist"
+    "update:source-maps-sentry": "npx sentry-expo-upload-sourcemaps dist",
+    "prebuild": "npx expo prebuild --clear"
   },
   "dependencies": {
     "@babel/runtime": "^7.24.6",

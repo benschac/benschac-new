@@ -34,19 +34,6 @@ export default function SettingsPage() {
                 Toggle Theme
               </Settings.Item>
             </Settings.Group>
-            {/* <Settings.Group>
-              <Settings.Item
-                // @ts-expect-error - icon prop is missing
-                icon={Code2}
-                onPress={() => {}}
-                iconBackground="active"
-                isActive={false}
-                title="Debug Menu"
-                subTitle="Developer Tools"
-              >
-                Developer Tools
-              </Settings.Item>
-            </Settings.Group> */}
           </Settings>
         </YStack>
       </SafeArea>

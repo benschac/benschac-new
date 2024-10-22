@@ -1,22 +1,9 @@
 import { Stack, useRouter } from 'expo-router'
-import {
-  YGroup,
-  Square,
-  Button,
-  H1,
-  YStack,
-  useTheme,
-  XStack,
-  Separator,
-  Spacer,
-  H3,
-  ListItem,
-  Theme,
-} from '@my/ui'
-import { ChevronRight, Home, BarChart, FileStack } from '@tamagui/lucide-icons'
+import { YGroup, useTheme, Separator, ListItem } from '@my/ui'
+import { TestTube, BarChart, FileStack, Star } from '@tamagui/lucide-icons'
 import { useLink } from 'solito/link'
 
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated'
+import { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated'
 import { SafeArea } from '../index'
 
 export default function ReanimatedExperimentsPage() {
@@ -53,6 +40,14 @@ export default function ReanimatedExperimentsPage() {
           <Separator />
           <YGroup.Item>
             <ListItem title="Bar Chart" icon={BarChart} scaleIcon={2} />
+          </YGroup.Item>
+          <YGroup.Item>
+            <ListItem
+              onPress={() => router.push('/reanimated-experiments/test')}
+              title="Test"
+              icon={TestTube}
+              scaleIcon={2}
+            />
           </YGroup.Item>
         </YGroup>
       </SafeArea>

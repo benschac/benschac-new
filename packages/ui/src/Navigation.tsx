@@ -152,9 +152,6 @@ export const Navigation = () => {
             </Theme>
           </View>
           <Spacer flex />
-          {/* <Link href="/about">about</Link> */}
-          {/* <Link href="/blog">blog</Link> */}
-          {/* <Link href="/uses">uses</Link> */}
           <SwitchThemeButton />
         </XStack>
       </YStack>
