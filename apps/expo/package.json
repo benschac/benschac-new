@@ -19,7 +19,7 @@
     }
   },
   "scripts": {
-    "start": "EXPO_UNSTABLE_CORE_AUTOLINKING=1 npx expo start -c",
+    "start": "npx expo start -c",
     "android": "npx expo run:android",
     "ios": "EXPO_UNSTABLE_CORE_AUTOLINKING=1 npx expo run:ios",
     "eject": "npx expo eject",
@@ -73,7 +73,8 @@
     "react-native-svg": "15.2.0",
     "react-native-vision-camera": "^4.5.2",
     "react-native-web": "~0.19.12",
-    "ts-pattern": "^5.3.1"
+    "ts-pattern": "^5.3.1",
+    "turbo-json-blob": "^0.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.6",
